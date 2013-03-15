@@ -1,0 +1,299 @@
+/* CHECKOUT STYLES
+================================================== */
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 13px;
+	color: #666;
+	
+}
+
+.title h1, .title h2, .title h3, .title h4, .title h5, .title h6 {
+	border-bottom: 5px solid #29a9df !important;
+	margin-bottom: -4px !important;
+	display: inline-block !important;
+	padding: 0px 10px !important;
+	margin-left:15px !important;
+	margin-right:15px !important;
+}
+
+h4.white{
+  color: #efefef;
+}
+
+
+.bg-form{
+  background: #fefcf7;
+}
+
+.bg-blue{
+  background: #0088cc;
+  padding:20px;
+  min-height: 200px;
+}
+
+.bg-test {
+  background: #efefef;
+  min-height: 300px;
+}
+
+.pymt-desc{
+  border-top: 3px solid #efefef;
+  border-left: 3px solid #efefef;
+  border-right: 3px solid #efefef;
+  height: 200px;
+  padding: 5px;  
+   
+}
+
+
+ul.pymt-list{
+margin: 10px 5px 5px 10px;
+}
+
+ul.pymt-list > li{
+  display: inline-block;
+  font-size: 1.1em;
+  border-bottom: 1px dotted #efefef;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  width: 100%;
+  line-height: 40px;
+}
+
+ul.pymt-list > li:last-child{
+  border-bottom: none;
+  padding-bottom: 5px;
+}
+
+ul.pymt-list li span{
+  font-size: 1.3em;
+  vertical-align: middle; 
+  float: right; 
+}
+
+.pymt-total{
+  background: #4c4c4c;
+  padding: 5px;
+  color: #efefef;
+  text-align: right;
+  border: 3px solid #efefef;
+    -webkit-border-radius: 0px 0px 5px 5px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.section-title {
+  background: #eee;
+	margin-bottom: 15px;
+	padding: 10px 10px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;  
+}
+
+.section-title strong {
+  font-size: 17.5px;
+  margin:10px 0px;
+  line-height: 20px;
+
+}
+
+.title-txt{
+  font-size: 17.5px;
+}
+
+.section-title ul{
+  list-style-type: none;
+}
+
+.section-title ul li{
+  display: inline-block;
+}
+
+.section-title span{
+  font-size: 1.5em;
+}
+
+.section-title > h4 > span{
+  float:right;
+
+}
+
+
+.bdr-right{
+	border-right: 1px solid #eee;
+}
+
+.bdr-left{
+	border-left: 1px solid #eee;
+}
+
+.invert{
+	background: #ccc;
+	color: #444;
+}
+
+.txt-right{
+	text-align: right;
+}
+
+a.edit-links{
+  line-height: 2.5em;
+}
+
+
+.cntr{
+	text-align: center;
+
+}
+
+.lt-grey{
+	background: #eee;
+	margin-bottom: 15px;
+	padding: 5px 10px;
+
+}
+.selected-state{
+  color: #468847;
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+  padding: 19px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+
+.pad-10{
+	padding: 10px;
+}
+
+h5.hvy-blue{
+	font-weight: 500;
+	color: #0094cf;
+}
+
+.space-bttm{
+  margin-bottom: 50px;
+}
+.space-top-20{
+	margin-top: 20px;
+}
+
+.help-block{font-size: .9em; font-style: italic;}
+
+.cards {
+position: absolute;
+top: 8px;
+right: 0px;
+}
+
+.cards li {
+display: block;
+float: left;
+width: 29px;
+height: 22px;
+margin-left: 4px;
+text-indent: -9999px;
+background-repeat: no-repeat;
+background-position: center center;
+filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+opacity: 1;
+-webkit-transition: opacity 0.2s;
+-moz-transition: opacity 0.2s;
+-o-transition: opacity 0.2s;
+transition: opacity 0.2s;
+}
+
+.cards li.visa{background: url('../img/icons/CC/card-icon-visa.png');}
+.cards li.mastercard{background: url('../img/icons/CC/card-icon-mastercard.png');}
+.cards li.amex{background: url('../img/icons/CC/card-icon-amex.png');}
+
+.cards li.discover{background-position:-96px 0; width:32px; height:21px}
+.cc_diners{background-position:-128px 0; width:32px; height:21px}
+.cc_jcb{background-position:-160px 0; width:32px; height:21px}
+.visa_back{background-position:0 -22px; width:75px; height:48px}
+.amex_front{background-position:-75px -22px; width:75px; height:48px}
+
+.visa_back {
+background-position: 0 -22px;
+width: 75px;
+height: 48px;
+float: right;
+position: relative;
+/* right:31%; */
+}
+
+.full-border{
+  border: 3px solid #efefef;
+  padding: 10px;
+  background: #efefef;
+}
+
+.cc {
+display: inline-block;
+margin: 4px;
+}
+
+.big-font{
+	font-size: 10em;
+}
+
+.font-lead{
+	font-size: 1.3em;
+}
+
+.label-blue{
+  font-size: 1.5em !important;
+  color: #0088cc;
+}
+
+.label-disabled{
+  font-size: 1.5em !important;
+  color: #aaa;
+}
+
+.black-bg{
+	background: #000;
+}
+
+.bootstrap input[type="text"]{
+  padding: 8px 6px;
+}
+
+.bootstrap label {
+  font-weight: bold;
+}
+
+.bootstrap .form-horizontal .controls {
+margin-bottom: 2em;
+}
+
+label.valid {
+  width: 24px;
+  height: 24px;
+  background: url('../img/icons/icon-success.png') center center no-repeat;
+  display: inline-block;
+  text-indent: -9999px;
+  padding-left: 10px;
+}
+
+label.error {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+
+.bootstrap .form-horizontal .control-group {
+margin-bottom: 8px;
+}
+
+.valid-icon input:focus:invalid{
+background: #fff url(../img/icons/invalid.png) no-repeat 98% center;
+  
+}
+.valid-icon input:required:valid{
+background: #fff url(../img/icons/valid.png) no-repeat 98% center;
+  
+}
+
+
+

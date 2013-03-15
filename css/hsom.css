@@ -1,0 +1,130 @@
+
+
+
+
+.dk-grey-bg{
+	background: #292929;
+}
+
+.lt-grey-bg{
+	background: #efefef;
+}
+
+.black-bg{
+	background: #000;
+}
+
+.white-bg{
+	background: #fff;
+}
+
+.yellow-bg{
+	background: #ffba00;
+}
+
+
+.yellow{
+	color: #ffba00;
+}
+
+.emailForm-box{
+	background: url(../img_hsom/bg-email-capture.png) no-repeat;
+	width: 980px;
+	min-height: 115px;
+	padding:30px;
+}
+
+body{
+font-family: 'Lato',arial, sans-serif;
+color: #3b3b3b;
+
+}
+
+h3.section-title{
+	border-top: 2px solid #dddddd;
+	color: #dddddd;
+	margin-bottom: 20px;
+}
+
+
+.video-section{	
+	width: 100%;
+	height: 698px;
+}
+
+.thumbWrap{	
+	background:black;
+}
+
+.rsThumbs{
+	margin:0 auto;
+}
+
+.bonus-tab{
+	background: url('../img_hsom/bonus_tab.png')no-repeat center;
+	bottom: 40px;
+	width: 270px;
+	height: 40px;
+	margin: 0px auto;
+	position: relative;
+
+	
+}
+
+.desc-section{
+	width: 100%;
+	min-height: 600px;
+	
+}
+
+.carousel-section{
+	width: 100%;
+	height: 660px;
+}
+
+.emailForm-section{
+	height: 191px;
+	background: url(../img_hsom/bg-emailForm.png)repeat-x;
+}
+
+
+.margin-top-30{
+	margin-top: 30px;
+	
+}
+
+
+
+.bootstrap .btn-yellow {
+
+  color: #2a2a2a;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #faa732;
+  background-image: -moz-linear-gradient(top, #ffc322 0%, #ffba00 100%);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffc322), to(#ffba00));
+  background-image: -webkit-linear-gradient(top, #ffc322, #ffba00);
+  background-image: -o-linear-gradient(top, #ffc322, #ffba00);
+  background-image: linear-gradient(to bottom, #ffc322, #ffba00);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffc322', endColorstr='#ffffba00', GradientType=0);
+  border-color: #ffba00 #ffba00 #ad6704;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #ffba00;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.bootstrap .btn-yellow:hover,
+.bootstrap .btn-yellow:active,
+.bootstrap .btn-yellow.active,
+.bootstrap .btn-yellow.disabled,
+.bootstrap .btn-yellow[disabled] {
+  color: #555;
+  background-color: #eeae00;
+  *background-color: #1b30a7;
+}
+.bootstrap .btn-yellow:active,
+.bootstrap .btn-yellow.active {
+  background-color: #c67605 \9;
+}
+

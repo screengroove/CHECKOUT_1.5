@@ -1,0 +1,77 @@
+
+
+
+
+.table thead{
+	background: #444;
+
+}
+
+
+.table thead tr{
+	text-align: center;
+	color: #efefef;
+	text-shadow:  1px 1px 1px #222;
+	font-size: 1.1em;
+	padding:5px 0px;
+}
+.table thead tr td:last-child {
+		text-align: center;
+		vertical-align: middle;	
+}
+
+.table tbody td{
+	font-size: 1.1em;
+	padding: 10px;
+	vertical-align: middle;
+}
+.table tbody tr:last-child{
+	border-bottom: 2px solid #eee;
+}
+
+.table tbody td:first-child{
+	text-align: center;
+	vertical-align: middle;	
+}
+.table tbody td:last-child{
+	text-align: center;
+}
+.table tfoot td:first-child{
+	text-align: right;
+	font-style: inherit;
+}
+.table tfoot td:last-child{
+text-align: center;
+	vertical-align: middle;	
+}
+
+.table tfoot{
+  font-size: .9em;
+}
+
+.table tfoot tr:last-child{
+	background: #444;
+	color: #efefef;
+	font-size: 1.3em;
+	font-weight: 600;
+	
+}
+
+
+.ship-info{
+	text-align: center;
+	color:#6d8ea0;
+	font-style: italic;
+	font-size: .7em;
+}
+
+.no-bdr{
+	border: none !important;
+}
+
+.no-bdr th,
+.no-bdr td {
+
+  border: none;
+}
+
