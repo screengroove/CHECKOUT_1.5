@@ -74,18 +74,10 @@
         , check_box: "required"
         , answer   : "required"
       },
-      /*
-highlight: function(element) {
-        $(element).closest('.control-group').removeClass('success').addClass('error');
-      },
-      success: function(element) {
-        element
-          .text('OK!').addClass('valid')
-          .closest('.control-group').removeClass('error').addClass('success');
-      }
-*/
     });
-    //disabled class removed upon form validation
+    
+    $('.cc-tip').tooltip('toggle');
+    
     
   });
 
@@ -231,16 +223,11 @@ highlight: function(element) {
 <div class="row-fluid">
   <div class="span6">
     <form id="myform">
-      <div class="span12">
-        <div class="span7">
-          <h4>BILLING ADDRESS</h4>
-        </div>
-        <div class="span5">            
-          <label class="checkbox">
-            <input type="checkbox" id="inlinecCheckbox1" name="inlineCheckbox1" class="checkbox inline" value="option1" />
-            Same as Shipping Address
-          </label>           
-        </div><!-- /span6 -->
+      <div class="span12" style="position:relative;">        
+        <legend>BILLING ADDRESS <label class="checkbox ">
+          <input type="checkbox" id="inlinecCheckbox1" name="inlineCheckbox1" class="checkbox inline" value="option1" />
+          Same as Shipping Address
+        </label></legend>
       </div><!-- /span12 -->
         
 <div class="row-fluid space-top-20">
@@ -290,7 +277,7 @@ highlight: function(element) {
   
             
   <div style="position:relative;">
-  <legend>Payment info</legend>
+  <legend>PAYMENT INFO</legend>
     <ul class='cards'>
       <li class='visa'>Visa</li>
       <li class='mastercard'>Mastercard</li>
@@ -311,12 +298,12 @@ highlight: function(element) {
   <div class='span4'>
     <div class='controls controls-row card-expiration'>
     <label class="control-label hide"  for='card-expiration-month'> month</label>
-    <input class='span4' id='card-expiration-month' name='card-expiration-month' placeholder='MM' type='text'>
+    <input class='span4 cc-tip' id='card-expiration-month' name='card-expiration-month' placeholder='MM' type='text' maxlength="2" title="Expiration Month">
     
     <div style="float:left;font-size:2em;margin:0px 4px;">/</div>
     
     <label class="control-label hide" for='card-expiration-year'> year</label>
-    <input class='span4' id='card-expiration-year' name='card-expiration-year' placeholder='YY' type='text'>
+    <input class='span4 cc-tip' id='card-expiration-year' name='card-expiration-year' placeholder='YY' type='text' maxlength="2" title="Expiration Year">
     </div>
     </div>
 </div><!-- /row -->
@@ -324,7 +311,7 @@ highlight: function(element) {
 <div class='row-fluid'>
   <div class='span8'>
     <label class='control-label hide' for='card-number'>Card number</label>
-    <input class='span12' id="number_cc" name="number_cc" placeholder='Card number' type='text' placeholder="Card number">
+    <input class='span12' id="number_cc" name="number_cc" placeholder='Card number' type='text' placeholder="Card number" >
   </div>
   <div class='span4'>
     <label class='control-label hide' for='card-security-code'>Security code</label>

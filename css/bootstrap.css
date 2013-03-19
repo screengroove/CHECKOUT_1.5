@@ -1224,7 +1224,7 @@
   line-height: 40px;
   color: #333333;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
 }
 .bootstrap legend small {
   font-size: 15px;
