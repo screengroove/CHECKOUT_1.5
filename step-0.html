@@ -56,12 +56,15 @@ $(document).ready(function(){
      , lastName    : "required"
      , phoneNumber : "required"
      , email       : {
-        required: true,
-        email: true
+        required   : true,
+        email      : true
        }
-     , password    : "required"
+     , password    : {
+         required  : true,
+         minlength : 6
+       }
      , confirmation: {
-         equalTo: "#password"
+         equalTo   : "#password"
        }
      , policy      : "required"
     }
@@ -113,7 +116,7 @@ $(document).ready(function(){
       <div class="controls valid-icon">
         <div class="input-prepend">
           <span class="add-on"><i class="icon-user"></i></span>
-          <input id="firstName" class="span11" name="firstName" type="text" placeholder="First Name" required />
+          <input id="firstName" class="span11" name="firstName" type="text" placeholder="First Name" />
         </div>
       </div>
     </div><!-- /cntrl-group -->       
