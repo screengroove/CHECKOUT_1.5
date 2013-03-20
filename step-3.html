@@ -76,7 +76,8 @@
       },
     });
     
-    $('.cc-tip').tooltip('toggle');
+    $('.exp-tip').tooltip('toggle');
+    $('.cvc-tip').popover('toggle')
     
     
   });
@@ -180,8 +181,8 @@
 <div class="row-fluid">				
   <div class="span12">
     <div class="span6 ">
-      <div class="span12">
-      <div class="span7"><h4>DELIVERY DESTINATION</h4></div> 
+      <div class="span12 section-title">
+      <div class="span7"><strong>DELIVERY DESTINATION</strong></div> 
       <div class="span5"><a href="#" class="edit-links"><i class="icon-edit"></i>change destination</a></div>
     </div><!-- /span6 -->
     
@@ -223,27 +224,26 @@
 <div class="row-fluid">
   <div class="span6">
     <form id="myform">
-      <div class="span12" style="position:relative;">        
-        <legend>BILLING ADDRESS <label class="checkbox ">
+      <div class="span12 section-title" style="position:relative;">
+        <div class="span7">       
+        <strong>BILLING ADDRESS</strong>
+        </div>
+        <div class="span5">
+         <label class="checkbox ">
           <input type="checkbox" id="inlinecCheckbox1" name="inlineCheckbox1" class="checkbox inline" value="option1" />
           Same as Shipping Address
-        </label></legend>
+        </label>
+        </div> <!-- /span5 -->
       </div><!-- /span12 -->
         
-<div class="row-fluid space-top-20">
-  <div class="control-group span8">
+<div class="row-fluid space-top-20 ">
+  <div class="control-group span12">
     <label class="control-label hide" for="streetOne">Street Address</label>
     <div class="controls valid-icon">
-      <input id="streetOne" class="span11" name="streetOne" type="text" placeholder="Street Address" required />
+      <input id="streetOne" class="span12" name="streetOne" type="text" placeholder="Street Address" required />
     </div>
   </div>  
-  <div class="control-group span4">
-    <label class="control-label hide" for="streetTwo">Street Address 2</label>
-    <div class="controls">
-      <input id="streetTwo" class="span12" name="streetTwo" type="text" placeholder="Street Address 2 (optional)" />
-    </div>
-  </div>
-</div><!-- /row -->
+ </div><!-- /row -->
   
   <div class="row-fluid">
     <div class="control-group span6">
@@ -276,8 +276,8 @@
   </div> <!-- /row -->
   
             
-  <div style="position:relative;">
-  <legend>PAYMENT INFO</legend>
+  <div class="margin-top-20 section-title" style="position:relative;">
+  <strong>PAYMENT INFO</strong>
     <ul class='cards'>
       <li class='visa'>Visa</li>
       <li class='mastercard'>Mastercard</li>
@@ -298,12 +298,12 @@
   <div class='span4'>
     <div class='controls controls-row card-expiration'>
     <label class="control-label hide"  for='card-expiration-month'> month</label>
-    <input class='span4 cc-tip' id='card-expiration-month' name='card-expiration-month' placeholder='MM' type='text' maxlength="2" title="Expiration Month">
+    <input class='span4 exp-tip' id='card-expiration-month' name='card-expiration-month' placeholder='MM' type='text' maxlength="2" title="Expiration Month">
     
     <div style="float:left;font-size:2em;margin:0px 4px;">/</div>
     
     <label class="control-label hide" for='card-expiration-year'> year</label>
-    <input class='span4 cc-tip' id='card-expiration-year' name='card-expiration-year' placeholder='YY' type='text' maxlength="2" title="Expiration Year">
+    <input class='span4 exp-tip' id='card-expiration-year' name='card-expiration-year' placeholder='YY' type='text' maxlength="2" title="Expiration Year">
     </div>
     </div>
 </div><!-- /row -->
@@ -315,7 +315,7 @@
   </div>
   <div class='span4'>
     <label class='control-label hide' for='card-security-code'>Security code</label>
-    <input class='span10' id="veri_code" name="veri_code" placeholder='CVC' type='text'>
+    <input class='span10 cvc-tip' id="veri_code" name="veri_code" placeholder='CVC' type='text' maxlength="4" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">
   </div>
 </div><!-- /row -->
     </div>

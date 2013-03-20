@@ -82,17 +82,19 @@ ul.pymt-list li span{
 }
 
 .section-title {
-	margin-bottom: 15px;
-	padding: 10px 10px;
-	-webkit-border-radius: 5px 5px 0px 0px;
-	border-radius: 5px 5px 0px 0px;  
+display: block;
+width: 100%;
+padding: 0;
+margin-bottom: 20px;
+line-height: 30px;
+border: 0;
+border-bottom: 1px solid #333333; 
 }
 
 .section-title strong {
-  font-size: 17.5px;
-  margin:10px 0px;
-  line-height: 20px;
-
+  font-size: 21px;  
+  color: #333333;
+  font-weight: 400;
 }
 
 .title-txt{
@@ -292,6 +294,22 @@ background: #fff url(../img/icons/invalid.png) no-repeat 98% center;
 .valid-icon input:required:valid{
 background: #fff url(../img/icons/valid.png) no-repeat 98% center;
   
+}
+
+hr {
+margin: 32px 0;
+border: 0;
+border-top: .1em solid #b8cad0;
+border-bottom: .1em solid #e6f1f3;
+}
+
+.bootstrap .modal{
+  width: 650px;
+  height: 750px;
+}
+
+.bootstrap .modal-body{
+  max-height: 600px;
 }
 
 
