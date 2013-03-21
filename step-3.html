@@ -76,10 +76,22 @@
       },
     });
     
-    $('.exp-tip').tooltip('toggle');
-    $('.cvc-tip').popover('toggle')
-    
-    
+    $('.exp-tip').mouseover(function(){
+      $(this).tooltip('toggle')
+    })
+    $('.cvc-tip').mouseover(function(){
+      $(this).popover('toggle')
+    })
+    $('input').focusout(function() {
+      $('#myform').validate().element(this)
+      if($(this).hasClass('error')){
+        $('.'+this.id).removeClass('success')
+        $('.'+this.id).addClass('error')
+      } else {
+        $('.'+this.id).removeClass('error')
+        $('.'+this.id).addClass('success')
+      }
+    })
   });
 
   </script>
@@ -237,22 +249,22 @@
       </div><!-- /span12 -->
         
 <div class="row-fluid space-top-20 ">
-  <div class="control-group span12">
+  <div class="control-group span12 streetOne">
     <label class="control-label hide" for="streetOne">Street Address</label>
     <div class="controls valid-icon">
-      <input id="streetOne" class="span12" name="streetOne" type="text" placeholder="Street Address" required />
+      <input id="streetOne" class="span12" name="streetOne" type="text" placeholder="Street Address"  />
     </div>
   </div>  
  </div><!-- /row -->
   
   <div class="row-fluid">
-    <div class="control-group span6">
+    <div class="control-group span6 city">
       <label class="control-label hide" for="city">City</label>
       <div class="controls">
         <input id="city" class="span12" name="city" type="text" placeholder="City" />
       </div>
     </div>          
-    <div class="control-group span6">
+    <div class="control-group span6 state">
       <label class="control-label hide" for="state">State / Province</label>
       <div class="controls">
         <input type="text" class="states span12" id="state" name="state" placeholder="State / Province" data-provide="typeahead" />
@@ -261,13 +273,13 @@
   </div><!-- /row -->
   
   <div class="row-fluid">
-    <div class="control-group span5">
+    <div class="control-group span5 postal">
       <label class="control-label hide" for="postal">Postal Code </label>
       <div class="controls">
         <input id="postal" class="span12" name="postal" type="text" placeholder="Postal Code" />
       </div>
     </div>  
-    <div class="control-group span7">
+    <div class="control-group span7 country">
       <label class="control-label hide" for="country">Country</label>
       <div class="controls">
         <input type="text" class="countries span12" id="country" name="country" data-provide="typeahead" placeholder="Country"/>
@@ -315,7 +327,7 @@
   </div>
   <div class='span4'>
     <label class='control-label hide' for='card-security-code'>Security code</label>
-    <input class='span10 cvc-tip' id="veri_code" name="veri_code" placeholder='CVC' type='text' maxlength="4" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">
+    <input class='span10 cvc-tip' id="veri_code" name="veri_code" placeholder='CVC' type='text' maxlength="4" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">
   </div>
 </div><!-- /row -->
     </div>
