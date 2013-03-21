@@ -50,32 +50,52 @@
 
   <script>
 $(document).ready(function(){
-    $("#myform").validate({
+    $("#shipping").validate({
       rules: {
-          streetOne: "required"
-        , city     : "required"
-        , state    : "required"
-        , postal   : "required"
-        , country  : "required"
-        , name_cc  : "required"
-        , number_cc: {
-            required: true,
-            creditcard: true
-          }
-        , exp_mon  : "required"
-        , exp_year : "required"
-        , veri_code: "required"
-        , check_box: "required"
-        , answer   : "required"
-      },
-      highlight: function(element) {
-        $(element).closest('.control-group').removeClass('success').addClass('error');
-      },
-      success: function(element) {
-        element.text('OK!').addClass('valid')
-      .closest('.control-group').removeClass('error').addClass('success');
+         firstName   : "required"
+       , lastName    : "required"
+       , streetOne   : "required"
+       , city        : "required"
+       , country     : "required"
+
       }
     });
+    $('input').focusout(function() {
+      $('#shipping').validate().element(this)
+      if($(this).hasClass('error')){
+        $('.'+this.id).removeClass('success')
+        $('.'+this.id).addClass('error')
+      } else {
+        $('.'+this.id).removeClass('error')
+        $('.'+this.id).addClass('success')
+      }
+    })
+    // $("#myform").validate({
+    //   rules: {
+    //       streetOne: "required"
+    //     , city     : "required"
+    //     , state    : "required"
+    //     , postal   : "required"
+    //     , country  : "required"
+    //     , name_cc  : "required"
+    //     , number_cc: {
+    //         required: true,
+    //         creditcard: true
+    //       }
+    //     , exp_mon  : "required"
+    //     , exp_year : "required"
+    //     , veri_code: "required"
+    //     , check_box: "required"
+    //     , answer   : "required"
+    //   },
+    //   highlight: function(element) {
+    //     $(element).closest('.control-group').removeClass('success').addClass('error');
+    //   },
+    //   success: function(element) {
+    //     element.text('OK!').addClass('valid')
+    //   .closest('.control-group').removeClass('error').addClass('success');
+    //   }
+    // });
     
     
     $("#home-options").hide();
@@ -214,78 +234,66 @@ $(document).ready(function(){
         
         <div id="home-options" > 
           <h3>Please verify shipping address below:</h3>               
-          <form id="myform form-horizontal" style="background:#fefcf7;padding:10px;">
-             <div class="row-fluid">                                                 
-              <div class="control-group span6">
+          <form id="shipping" style="background:#fefcf7;padding:10px;">
+            <div class="row-fluid">                                                 
+              <div class="control-group span6 firstName">
                 <label class="control-label " for="streetOne">First Name</label>
                 <div class="controls">
                   <input id="firstName" class="span12" name="firstName" type="text" placeholder="First Name" />
                 </div>
               </div><!-- /cntrl-group -->
-             
-             
-             
-              <div class="control-group span6">
+              <div class="control-group span6 lastName">
                 <label class="control-label " for="streetTwo">Last Name</label>
                 <div class="controls">
                   <input id="lastName" name="lastName" type="text" class="span12" placeholder="Last Name"  />
                 </div>
               </div> <!-- /cntrl-group -->
-             
-              
-             </div> <!-- /row -->
-              
-              
-              <div class="row-fluid">      
-              <div class="control-group span8">
+            </div> <!-- /row -->
+            <div class="row-fluid">      
+              <div class="control-group span8 streetOne">
                 <label class="control-label" for="streetOne">Street Address</label>
                 <div class="controls">
                   <input id="streetOne" class="span12" name="streetOne" type="text"  />
                 </div>
               </div>
-              <div class="control-group span4">
+              <div class="control-group span4 streetTwo">
                 <label class="control-label" for="streetTwo">Street Address 2</label>
                 <div class="controls">
                   <input id="streetTwo" class="span12" name="streetTwo" type="text" />
                 </div>
               </div>
-              
-              </div><!-- /row -->
-              
-              <div class="row-fluid">
-              <div class="control-group span5">
+            </div><!-- /row -->
+            <div class="row-fluid">
+              <div class="control-group span5 city">
                 <label class="control-label" for="city">City</label>
                 <div class="controls">
                   <input id="city" class="span10" name="city" type="text" />
                 </div>
               </div>
-              <div class="control-group span5">
+              <div class="control-group span5 state">
                 <label class="control-label" for="state">State / Province</label>
                 <div class="controls">
                   <input type="text" class="states span10" id="state" name="state" data-provide="typeahead" />
                 </div>
               </div>
-              </div><!-- /row -->
-              
-              <div class="row-fluid">
-              <div class="control-group span5">
+            </div><!-- /row -->
+            <div class="row-fluid">
+              <div class="control-group span5 postal">
                 <label class="control-label" for="postal">Postal Code </label>
                 <div class="controls">
                   <input id="postal" class="span10" name="postal" type="text" />
                 </div>
               </div>
-              
-              <div class="control-group span5">
+              <div class="control-group span5 country">
                 <label class="control-label" for="country">Country</label>
                 <div class="controls">
                   <input type="text" class="countries span10" id="country" name="country" data-provide="typeahead" />
                 </div>
-               </div>
-              </div> <!-- /row -->
-             
-            </form>  
+              </div>
+            </div> <!-- /row -->
             <button class="btn pull-left" type="submit"><i class=" icon-chevron-left white"></i>Go to Previous Step</button>
-          <button class="btn btn-large btn-success pull-right" type="submit">Continue to Next Step<i class=" icon-chevron-right icon-white"></i></button>              
+            <input id="formSubmit" class="btn btn-large btn-success pull-right" type="submit" value="Continue to Next Step >>"> <i class=" icon-chevron-right icon-white"></i>
+          </form>            
         </div> <!-- /home-options -->
         <div id="vault-options">
         <h3>Now, please select the desired vault storage options. </h3>

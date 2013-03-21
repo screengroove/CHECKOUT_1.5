@@ -67,6 +67,7 @@ $(document).ready(function(){
          minlength : 6
        }
      , confirmation: {
+         required  : true,
          equalTo   : "#password"
        }
      , policy      : "required"
@@ -74,10 +75,11 @@ $(document).ready(function(){
   });
 
   
-  $('#phone-tip').popover('toggle')
-
+  $('#phone-tip').mouseover(function(){
+    $('#phone-tip').popover('show')
+  })
   $('input').focusout(function() {
-    $('#signup').valid()
+    $('#signup').validate().element(this)
     if($(this).hasClass('error')){
       $('.'+this.id).removeClass('success')
       $('.'+this.id).addClass('error')
