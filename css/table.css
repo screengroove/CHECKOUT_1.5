@@ -53,11 +53,8 @@ text-align: center;
 	background: #444;
 	color: #efefef;
 	font-size: 1.3em;
-	font-weight: 600;
-	
+	font-weight: 600;	
 }
-
-
 .ship-info{
 	text-align: center;
 	color:#6d8ea0;
@@ -71,7 +68,12 @@ text-align: center;
 
 .no-bdr th,
 .no-bdr td {
-
   border: none;
 }
 
+/*
+ .storage tbody tr:hover{
+  background: yellow;
+}
+
+*/
