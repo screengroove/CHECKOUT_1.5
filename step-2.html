@@ -28,6 +28,7 @@
 	<link href="css/checkout.css" rel="stylesheet">
 	<link href="css/table.css" rel="stylesheet">
 	<link href="js/checkable/prettyCheckable.css" rel="stylesheet">
+	<link href="css/steps.css" rel="stylesheet">
 	
 	
 
@@ -105,19 +106,46 @@ $(document).ready(function(){
 
 <body class="bootstrap">
 	
-	<!--start: Header -->
+		<!--start: Header -->
 	<header>
 		
 		<!--start: Container -->
-		<div class="container ">
-			
+		<div class="container ">			
 			<!--start: Row -->
 			<div class="row-fluid">
-			 <div class="span8 pull-right">
-  			 <img src="img/icons/step-4.png" alt="step-4" width="570" height="110">
-			 </div>
-					
-								
+			   <div class="span3">
+			     <h1>Checkout</h1>			   
+			   </div><!-- /span3 -->
+  			 <div class="span9 pull-right">
+  			   <div class="multi-step four-steps numbered color-2">
+          	<ol>
+          		<li>
+          			<div class="wrap">
+          				<p class="title">Sign In</p>
+          				<p class="subtitle">Enter your credentials</p>
+          			</div>
+          		</li>
+          		<li>
+          			<a href="step-1.html"><div class="wrap">
+          				<p class="title">Select Shipping</p>
+          				<p class="subtitle">Select destination</p>
+          			</div></a>
+          		</li>
+          		<li class="current">
+          			<a href="step-2.html"><div class="wrap">
+          				<p class="title">Select Payment</p>
+          				<p class="subtitle">Choose the payment method</p>
+          			</div></a>
+          		</li>
+          		<li>
+          			<a href="step-3.html"><div class="wrap">
+          				<p class="title">Submit</p>
+          				<p class="subtitle">Review you order</p>
+          			</div></a>
+          		</li>
+          	</ol>
+          </div>
+  			 </div><!-- /span9 -->													
 			</div>
 			<!--end: Row -->
 			
@@ -126,6 +154,7 @@ $(document).ready(function(){
 			
 	</header>
 	<!--end: Header-->
+
 				
 		
 <div class="container">		<!--start: Container -->		
