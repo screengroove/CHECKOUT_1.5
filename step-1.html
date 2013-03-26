@@ -189,8 +189,15 @@ $(document).ready(function(){
                 <td class="qedit">
                   <input value="2" style="width:30px">
                   <button>Update</button>
+                  <a href="#" class="link-remove remove"><i class="icon-minus-sign blue>"></i>Remove Item</a>
+                  <span class="hide remove-confirm">
+                    Are you sure? &nbsp
+                    <a href="#" class="remove-yes"><i class="icon-minus-sign blue>"></i>Yes</a>
+                    &nbsp
+                    <a href="#" class="remove-no"><i class="icon-minus-sign blue>"></i>No</a>
+                  </span>
                 </td>
-                <td><a href="#" class="link-small remove">Remove</a></td>
+                <td></td>
                 <td class="qtotal">$1,798.22</td>
               </tr>
               <tr>
@@ -200,8 +207,15 @@ $(document).ready(function(){
                 <td class="qedit">
                   <input value="2" style="width:30px">
                   <button>Update</button>
+                  <a href="#" class="link-remove remove"><i class="icon-minus-sign blue>"></i>Remove Item</a>
+                  <span class="hide remove-confirm">
+                    Are you sure? &nbsp
+                    <a href="#" class="remove-yes"><i class="icon-minus-sign blue>"></i>Yes</a>
+                    &nbsp
+                    <a href="#" class="remove-no"><i class="icon-minus-sign blue>"></i>No</a>
+                  </span>
                 </td>
-                <td><a href="#"class="link-small remove">Remove</a></td>
+                <td></td>
                 <td class="qtotal">$1,798.22</td>
               </tr>
             </tbody>
@@ -400,7 +414,15 @@ a.	Purchase at least 500 ounces of silver through GoldSilver; b.	Purchase at lea
 <!-- REMOVE CART ITEAM -->
 <script>
   $('.remove').click(function(){
+    $(this).next().show()
+    $(this).hide()
+  })
+  $('.remove-yes').click(function(){
     $(this).parentsUntil('tbody').remove()
+  })
+  $('.remove-no').click(function(){
+    $(this).parent().prev().show()
+    $(this).parent().hide()
   })
 </script>
 <!-- REMOVE CART ITEM -->
