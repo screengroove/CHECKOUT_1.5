@@ -1,10 +1,11 @@
+<!-- Sup Patrick -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>CHECKOUT STEP 1</title> 
+	<title>SIGN IN</title> 
 	<meta name="description" content="Smart Bootstrap Theme"/>
 	<meta name="keywords" content="Template, Theme, web, html5, css3, Bootstrap" />
 	<meta name="author" content="Łukasz Holeczek from creativeLabs"/>
@@ -22,19 +23,14 @@
 	<meta property="og:image" content=""/>
 	<!-- end: Facebook Open Graph -->
 
-  <!-- start: CSS -->
+    <!-- start: CSS -->
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="css/checkout.css" rel="stylesheet">
 	<link href="css/table.css" rel="stylesheet">
-	<link href="js/checkable/prettyCheckable.css" rel="stylesheet">
 	<link href="css/Font-Awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/steps.css" rel="stylesheet">
-
-
 	
-	
-
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->
 
@@ -52,169 +48,56 @@
   <script src="js/checkable/prettyCheckable.js"></script>
 
 
-  <script>
+<script>
 $(document).ready(function(){
-    $("#shipping").validate({
-      rules: {
-         firstName   : "required"
-       , lastName    : "required"
-       , streetOne   : "required"
-       , city        : "required"
-       , country     : "required"
+  $("#signup").validate({
+    rules: {
+       firstName   : "required"
+     , lastName    : "required"
+     , phoneNumber : {
+        required   : true,
+        number     : true
+       }
+     , email       : {
+        required   : true,
+        email      : true
+       }
+     , password    : {
+         required  : true,
+         minlength : 6
+       }
+     , confirmation: {
+         required  : true,
+         equalTo   : "#password"
+       }
+     , policy      : "required"
+    }
+  });
 
-      }
-    });
-    $('input').focusout(function() {
-      $('#shipping').validate().element(this)
-      if($(this).hasClass('error')){
-        $('.'+this.id).removeClass('success')
-        $('.'+this.id).addClass('error')
-      } else {
-        $('.'+this.id).removeClass('error')
-        $('.'+this.id).addClass('success')
-      }
-    })
-    // $("#myform").validate({
-    //   rules: {
-    //       streetOne: "required"
-    //     , city     : "required"
-    //     , state    : "required"
-    //     , postal   : "required"
-    //     , country  : "required"
-    //     , name_cc  : "required"
-    //     , number_cc: {
-    //         required: true,
-    //         creditcard: true
-    //       }
-    //     , exp_mon  : "required"
-    //     , exp_year : "required"
-    //     , veri_code: "required"
-    //     , check_box: "required"
-    //     , answer   : "required"
-    //   },
-    //   highlight: function(element) {
-    //     $(element).closest('.control-group').removeClass('success').addClass('error');
-    //   },
-    //   success: function(element) {
-    //     element.text('OK!').addClass('valid')
-    //   .closest('.control-group').removeClass('error').addClass('success');
-    //   }
-    // });
-    
-    
-    $("#home-options").hide();
-    $("#vault-options").hide();
-    $("#vault-sidebar").hide();
-    $("#home-sidebar").hide();
-    
-    $("#home-choice").click(function(){
-      $("#home-box").removeClass("well").addClass("selected-state");
-      $("#vault-box").removeClass("selected-state").addClass("well");
-      $('#vault-options').hide();
-      $('#home-options').fadeIn();
-      $('#vault-sidebar').hide();
-      $('#home-sidebar').fadeIn();        	      	  			
-		});
-		
-		$("#vault-choice").click(function(){
-		  $("#vault-box").removeClass("well").addClass("selected-state");	
-		  $("#home-box").removeClass("selected-state").addClass("well");
-		  $('#home-options').hide();
-		  $('#vault-options').fadeIn();
-		  $('#home-sidebar').hide();
-		  $('#vault-sidebar').fadeIn();      		  			
-		});
-		
-		
-		// Hide all valut location info boxes by default
-		$('.info-hk ').hide();
-		$('.info-slc').hide();
-		$('.info-sg').hide();
-		$('.info-ca').hide();
-		$('.info-mia').hide();
-	
-		
-		//Hong Kong Vault
-		$('#vault-hk').mouseenter(function(){
-  		$('.info-hk').fadeIn();
-  		  if ($('#vault-hk').hasClass('muted')) {
-    		$('#vault-hk').addClass('bg-error');
-      } else {
-        $('#vault-hk').addClass('bg-hlight');
-      };      
-		}).mouseleave(function(){
-  		$('.info-hk').hide();
-  		$('#vault-hk').removeClass("bg-hlight bg-error");		      
-		});
-		
-		//Salt Lake City Vault
-		$('#vault-slc').mouseenter(function(){
-  		$('.info-slc').fadeIn();
-  		  if ($('#vault-slc').hasClass('muted')) {
-    		$('#vault-slc').addClass('bg-error');
-      } else {
-        $('#vault-slc').addClass('bg-hlight');
-      };      
-		}).mouseleave(function(){
-  		$('.info-slc').hide();
-  		$('#vault-slc').removeClass("bg-hlight bg-error");		      
-		});
-		
-		//Singapore Vault
-		$('#vault-sg').mouseenter(function(){
-  		$('.info-sg').fadeIn();
-  		  if ($('#vault-sg').hasClass('muted')) {
-    		$('#vault-sg').addClass('bg-error');
-      } else {
-        $('#vault-sg').addClass('bg-hlight');
-      };      
-		}).mouseleave(function(){
-  		$('.info-sg').hide();
-  		$('#vault-sg').removeClass("bg-hlight bg-error");		      
-		});
-		
-		//Canada Vault
-		$('#vault-ca').mouseenter(function(){
-  		$('.info-ca').fadeIn();
-  		  if ($('#vault-ca').hasClass('muted')) {
-    		$('#vault-ca').addClass('bg-error');
-      } else {
-        $('#vault-ca').addClass('bg-hlight');
-      };      
-		}).mouseleave(function(){
-  		$('.info-ca').hide();
-  		$('#vault-ca').removeClass("bg-hlight bg-error");		      
-		});
-		
-		//Miami Vault
-		$('#vault-mia').mouseenter(function(){
-  		$('.info-mia').fadeIn();
-  		  if ($('#vault-mia').hasClass('muted')) {
-    		$('#vault-mia').addClass('bg-error');
-      } else {
-        $('#vault-mia').addClass('bg-hlight');
-      };      
-		}).mouseleave(function(){
-  		$('.info-mia').hide();
-  		$('#vault-mia').removeClass("bg-hlight bg-error");		      
-		});
-		
-		  
+  
+  $('#phone-tip').mouseover(function(){
+    $('#phone-tip').popover('show')
+  })
+  $('input').focusout(function() {
+    $('#signup').validate().element(this)
+    if($(this).hasClass('error')){
+      $('.'+this.id).removeClass('success')
+      $('.'+this.id).addClass('error')
+    } else {
+      $('.'+this.id).removeClass('error')
+      $('.'+this.id).addClass('success')
+    }
+  })
+  $('#signup').hide();
+
 });
-  </script>
-
-
-
-
+</script>
 </head>
-
-
 
 <body class="bootstrap">
 	
-	<!--start: Header -->
-	<header>
-		
+		<!--start: Header -->
+	<header>		
 		<!--start: Container -->
 		<div class="container ">			
 			<!--start: Row -->
@@ -225,13 +108,13 @@ $(document).ready(function(){
   			 <div class="span9 pull-right">
   			   <div class="multi-step four-steps numbered color-2">
           	<ol>
-          		<li>
+          		<li class="current">
           			<div class="wrap">
           				<p class="title">Sign In</p>
           				<p class="subtitle">Enter your credentials</p>
           			</div>
           		</li>
-          		<li class="current">
+          		<li>
           			<a href="step-1.html"><div class="wrap">
           				<p class="title">Select Shipping</p>
           				<p class="subtitle">Select destination</p>
@@ -253,16 +136,13 @@ $(document).ready(function(){
           </div>
   			 </div><!-- /span9 -->													
 			</div>
-			<!--end: Row -->
-			
+			<!--end: Row -->			
 		</div>
-		<!--end: Container-->			
-			
+		<!--end: Container-->						
 	</header>
 	<!--end: Header-->
-				
 		
-<div class="container">		<!--start: Container -->		
+<div class="container">
   <div class="row-fluid">				
       <div class="span12">	  				
           <table class="table table-striped table-condensed" id="table-review">
@@ -316,331 +196,160 @@ $(document).ready(function(){
           </table> 				
     </div> <!-- END span12 -->					
   </div> <!--end: Row-->
-  
-  <h3>Where do you want your order shipped?</h3>
+
   <div class="row-fluid">
-    <div class="span12">
-      <div class="span8">
-        
-        <div class="span6 well" id="home-box">
-          <label class="radio label-blue ">
-            <input type="radio" name="optionsRadios" id="home-choice" value="option1">
-            To My Door
-            <img src="img/icons/icon-home.png" alt="icon-home" width="50" height="50" align="right"> 
-          </label> 
-               
-        </div>
-        
-        <div class="span6 well" id="vault-box">
-          <label class="radio label-blue">
-            <input type="radio" name="optionsRadios" id="vault-choice" value="option1">
-            To Vault Storage
-            <img src="img/icons/icon_safe.png" alt="icon_safe" width="55" height="55" align="right">
-          </label>        
-        </div>
-        
-        <div id="home-options" > 
-          <h3>Please verify shipping address below:</h3>               
-          <form id="shipping" style="background:#fefcf7;padding:10px;">
-            <div class="row-fluid">                                                 
-              <div class="control-group span6 firstName">
-                <label class="control-label " for="streetOne">First Name</label>
-                <div class="controls">
-                  <input id="firstName" class="span12" name="firstName" type="text" placeholder="First Name" />
-                </div>
-              </div><!-- /cntrl-group -->
-              <div class="control-group span6 lastName">
-                <label class="control-label " for="streetTwo">Last Name</label>
-                <div class="controls">
-                  <input id="lastName" name="lastName" type="text" class="span12" placeholder="Last Name"  />
-                </div>
-              </div> <!-- /cntrl-group -->
-            </div> <!-- /row -->
-            <div class="row-fluid">      
-              <div class="control-group span8 streetOne">
-                <label class="control-label" for="streetOne">Street Address</label>
-                <div class="controls">
-                  <input id="streetOne" class="span12" name="streetOne" type="text"  />
-                </div>
-              </div>
-              <div class="control-group span4 streetTwo">
-                <label class="control-label" for="streetTwo">Street Address 2</label>
-                <div class="controls">
-                  <input id="streetTwo" class="span12" name="streetTwo" type="text" />
-                </div>
-              </div>
-            </div><!-- /row -->
-            <div class="row-fluid">
-              <div class="control-group span5 city">
-                <label class="control-label" for="city">City</label>
-                <div class="controls">
-                  <input id="city" class="span10" name="city" type="text" />
-                </div>
-              </div>
-              <div class="control-group span5 state">
-                <label class="control-label" for="state">State / Province</label>
-                <div class="controls">
-                  <input type="text" class="states span10" id="state" name="state" data-provide="typeahead" />
-                </div>
-              </div>
-            </div><!-- /row -->
-            <div class="row-fluid">
-              <div class="control-group span5 postal">
-                <label class="control-label" for="postal">Postal Code </label>
-                <div class="controls">
-                  <input id="postal" class="span10" name="postal" type="text" />
-                </div>
-              </div>
-              <div class="control-group span5 country">
-                <label class="control-label" for="country">Country</label>
-                <div class="controls">
-                  <input type="text" class="countries span10" id="country" name="country" data-provide="typeahead" />
-                </div>
-              </div>
-            </div> <!-- /row -->
-            <button class="btn pull-left" type="submit"><i class=" icon-chevron-left white"></i>Go to Previous Step</button>
-            <input id="formSubmit" class="btn btn-large btn-success pull-right" type="submit" value="Continue to Next Step >>"> <i class=" icon-chevron-right icon-white"></i>
-          </form>            
-        </div> <!-- /home-options -->
-        <div id="vault-options">
-        <h3>Now, please select the desired vault storage options. </h3>
-        <table class="table storage">
-				
-					<h4 class="left-heading"><span>Segregated Storage - Master / Sub</span></h4>
-						<thead>
-						<tr>
-							<td class="row-highlight">Vault Location</td>
-							<td></td>
-							<td class="row-highlight">Shipping & Insurance</td>
-							<td class="row-highlight">Notes</td>
-						</tr>
-						</thead>										
-						<tbody>						
-						<tr id="vault-slc">
-							<td>
-								<label class="radio bold">
-									<input type="radio" name="type" id="" value="">
-									<h4 class="text-success">Salt Lake City</h4> 
-								</label>
-							</td>
-							<td> <div class="f32"><span class="flag-us"></span></div></td>
-							<td><h4 class="text-success">$23.50</h4></td>
-							<td></td>
-						</tr>
-				      
-						<tr id="vault-hk" class="muted" disabled="disabled">
-							<td >
-								<label class="radio bold">
-									<input type="radio" name="type" id="" value="" disabled="disabled">
-									<h4 class="text-muted">Hong Kong</h4>  
-								</label>								
-							</td>
-							<td> <div class="f32"><span class="flag-hk"></span></div></td>
-							<td >
-							 <h4 class="text-center">$45.00</h4>								
-							</td>
-							<td>
-								<p class="error-red">This location requires a minimum of</p>
-							</td>				      
-						</tr>
-						
-						<tr id="vault-sg">
-							<td>
-								<label class="radio bold">
-									<input type="radio" name="type" id="" value="" >
-									<h4 class="text-success">Singapore</h4>
-								</label>
-							</td>
-							<td> <div class="f32"><span class="flag-sg"></span></div></td>
-							<td align="center">
-								<h4 class="text-success">$45.00</h4>
-							</td>
-							<td>
-								<p class="error-red">This location requires a minimum of</p>
-							</td>				      
-						</tr>
-						
-					</tbody>
-        </table>
-        
-      	<form class="validateform form-inline" id="storage-title">
-					<h6>Storage Certificate Tile</h6>
-					<!-- <div class="question-mark popover" data-content="Storage Certificate Tile Explanation" data-original-title="Storage Certificate Tile"></div> -->
-					<input type="text" class="span4 " placeholder="Example of title ">
-				</form>
-
-        <table class="table">				
-					<h4 class="spacer">Segregated Storage - Direct Account</h4>
-						<thead>
-  						<tr>
-  							<td class="row-highlight">Vault Location</td>
-  							<td></td>
-  							<td class="row-highlight">Shipping & Insurance</td>
-  							<td class="row-highlight">Vault Name?</td>
-  						</tr>
-						</thead>
-						<tbody>
-						<tr id="vault-mia">
-							<td>
-								<label class="radio bold">
-									<input type="radio" name="type" id="" value="">
-									<h4 class="text-success">Miami</h4> 
-								</label>
-							</td>
-							<td> <div class="f32"><span class="flag-us"></span></div></td>
-							<td><h4 class="text-success">$23.50</h4></td>
-							<td>Brink’s Singapore Ltd.</td>
-						</tr>				      
-						<tr id="vault-ca" class="muted" disabled="disabled">
-							<td>
-								<label class="radio bold">
-									<input type="radio" name="type" id="" value="" disabled>
-									<h4 class="text-muted">Canada</h4> 
-								</label>
-							</td>
-							<td> <div class="f32"><span class="flag-ca"></span></div></td>
-							<td align="center">
-								<h4>$23.50</h4>
-							</td>
-							<td>
-								<p class="error-red">This is an error message</p>
-							</td>				      
-						</tr>
-					</tbody>
-				  </table>
-				   
-				  <button class="btn pull-left" type="submit"><i class=" icon-chevron-left white"></i>Go to Previous Step</button>
-          <button class="btn btn-large btn-success pull-right" type="submit">Continue to Next Step<i class=" icon-chevron-right icon-white"></i></button>
-        
-				                   
-        </div><!-- /vault-options -->
-     </div><!-- /span8 -->
-     
-     <div class="span4"  id="home-sidebar" style="height:800px;background:#f6f6f6;">
-        <div class="sidebar-cap">
-          <strong>Home Delivery Details </strong><span><img src="img/icons/icon_safe_25.png" alt="icon_safe" width="25" height="25"></span>      
-        </div>
-        <div class="span12">
-               
-        </div>
-     </div><!-- /home-sidebar -->
-
-      
-      <div class="span4"  id="vault-sidebar" style="height:800px;background:#f6f6f6;">
-        <div class="sidebar-cap">
-          <strong>Vault Storage Details </strong><span><img src="img/icons/icon_safe_25.png" alt="icon_safe" width="25" height="25"></span>      
-        </div>
-        <div class="span12">
-          <h4 class="text-info">What is a Master-Sub Account?</h4>
-          <p>90's vegan narwhal you probably haven't heard of them keffiyeh. Kale ch</p>          
-          <h4 class="text-info">What is a Direct Account?</h4>
-          <p>90's vegan narwhal you probably haven't heard of them keffiyeh. Kale ch</p>        
-        </div>
-        <div class="clearfix"></div>
-        
-        <div class="info-hk info-pop">
-          <span class="flag-hk"></span><h4>Honk Kong Storage</h4><hr>
-          <address>
-            <strong>Hong Kong Vault</strong><br>
-            795 Folsom Ave, Suite 600<br>
-            San Francisco, CA 94107<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
-          </address>
-          <strong class="text-error">This order ineligible for this vault option because:</strong>          
-        </div><!-- /hong kong info -->
-        
-        <div class="info-slc info-pop">
-           <span class="flag-us"></span><h4>Salt Lake City Storage</h4><hr>          
-          <address>
-            <strong>Salt Lake City Vault</strong><br>
-            795 Folsom Ave, Suite 600<br>
-            San Francisco, CA 94107<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
-          </address>
-          <p>90's vegan narwhal you probably haven't heard of them keffiyeh.</p>
-          <hr>
-          <strong>Estimated Monthly Storage Fee:</strong>
-          <p class="lead text-info text-center">$35.74 / Month</p>
-          <em class="text-info"> Based on last month's average spot price</em>
-          <hr>
-          <strong>Worth Pointing Out:</strong>
-          <p>Upon completing your order, you will receive an email outlining additional steps to set up you account.</p>
-        </div><!-- /salt lake city info -->
-        
-        <div class="info-sg info-pop">          
-           <span class="flag-sg"></span><h4>Singapore Storage</h4><hr>                           
-          <address>
-            <strong>Salt Lake City Vault</strong><br>
-            795 Folsom Ave, Suite 600<br>
-            San Francisco, CA 94107<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
-          </address>
-          <p>90's vegan narwhal you probably haven't heard of them keffiyeh.</p>
-          <hr>
-          <strong>Estimated Monthly Storage Fee:</strong>
-          <p class="lead text-info text-center">$35.74 / Month</p>
-          <em class="text-info"> Based on last month's average spot price</em>
-          <hr>
-          <strong>Worth Pointing Out:</strong>
-          <p>Upon completing your order, you will receive an email outlining additional steps to set up you account.</p>
-        </div><!-- /hong kong info -->
-        
-        <div class="info-mia info-pop">
-           <span class="flag-us"></span><h4>Miami Storage</h4><hr>                             
-          <address>
-            <strong>Miami Vault</strong><br>
-            795 Folsom Ave, Suite 600<br>
-            San Francisco, CA 94107<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
-          </address>
-          <p>90's vegan narwhal you probably haven't heard of them keffiyeh.</p>
-          <hr>
-          <strong>Estimated Monthly Storage Fee:</strong>
-          <p class="lead text-info text-center">$35.74 / Month</p>
-          <em class="text-info"> Based on last month's average spot price</em>
-          <hr>
-          <strong>Worth Pointing Out:</strong>
-          <p>Upon completing your order, you will receive an email outlining additional steps to set up you account.</p>
-        </div><!-- /miami info -->
-        
-        <div class="info-ca info-pop ">
-          <span class="flag-ca"></span><h4>Canada Storage</h4><hr>
-          <address>
-            <strong>Hong Kong Vault</strong><br>
-            795 Folsom Ave, Suite 600<br>
-            San Francisco, CA 94107<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
-          </address>
-          
-            <ul class="unstyled">
-              <li>
-                <strong class="text-error">This order ineligible for this vault option because:</strong>
-              </li>
-              <li>
-                <div class="alert alert-error">
-                <i class="icon-ban-circle"></i> This is an error message
-                </div>              
-              </li>
-              <li>
-                <div class="alert alert-error">
-                <i class="icon-ban-circle"></i> This is an error message
-                </div>              
-              </li>
-            
-            
-            </ul>          
-        </div><!-- /canada info -->
-      
-      </div><!-- /span8 -->
-      
+   <div class="span4">
+    <h3>Returning Customers</h3>
+    <em class="blue">I have an account</em>     
+   </div> <!-- /log in form -->	
   
+   <div class="span8">
+    <h3>Create an Account</h3>
+    <em class="blue">I have an account</em>
+    <form id="signup"style="background:#fefcf7;padding:10px;">
+      <div class="row-fluid">                                                 
+        <div class="control-group span6 firstName">
+          <label class="control-label " for="firstName">First Name</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-user"></i></span>
+              <input id="firstName" class="span11" name="firstName" type="text" placeholder="First Name" />
+            </div>
+          </div>
+        </div><!-- /cntrl-group -->       
+        <div class="control-group span6 lastName">
+          <label class="control-label " for="lastName">Last Name</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-user"></i></span>
+              <input id="lastName" name="lastName" type="text" class="span11" placeholder="Last Name" />
+            </div>
+          </div>
+        </div> <!-- /cntrl-group -->      
+      </div> <!-- /row -->
+      <div class="row-fluid">                                                 
+        <div class="control-group span6 phoneNumber">
+          <label class="control-label " for="phoneNumber">Phone Number</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-phone"></i></span>
+              <input id="phoneNumber" class="span11" name="phoneNumber" type="text" />
+            </div>
+          </div>
+        </div><!-- /cntrl-group -->            
+        <div class=" span6">
+          <a href="#" id="phone-tip" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top"><em style="line-height:76px;margin-right:5px;">Why do you need this?</em></a><i class="icon-question-sign"></i>
+        </div> <!-- /cntrl-group -->      
+      </div> <!-- /row -->
+      <div class="row-fluid">                                                 
+        <div class="control-group span6 email">
+          <label class="control-label" for="email">Email Address</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-envelope"></i></span>
+              <input id="email" class="span11" name="email" type="text" placeholder="myaccount@example.com" />
+            </div>
+          </div>
+        </div><!-- /cntrl-group -->       
+      </div> <!-- /row -->
+      <div class="row-fluid">                                                 
+        <div class="control-group span6 password">
+          <label class="control-label " for="password">Password</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-key"></i></span>
+              <input id="password" class="span11" name="password" type="password" placeholder="Minimum 6 Characters" />
+            </div>
+          </div>
+        </div><!-- /cntrl-group -->       
+        <div class="control-group span6 confirmation">
+          <label class="control-label " for="confirmation">Confirm Password</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-key"></i></span>
+              <input type="password" id="confirmation" name="confirmation" type="text" class="span11" placeholder="Re-type Password"  />
+            </div>
+          </div>
+        </div> <!-- /cntrl-group -->      
+      </div> <!-- /row -->
+      <hr>
     
-    </div> <!-- /span12 -->
-  </div> <!-- /ROW -->
-
-		
+      <div class="row-fluid">      
+        <div class="span6">
+          <label class="control-label" for="streetOne">How did you hear about us?</label>        
+          <select id="company" class="span12" name="streetOne" type="select"  />
+            <option value="0">Please Select:</option>
+            <option value="1">Google, Bing, Other (Search Engine)</option>
+            <option value="2">Guide to Investing in Gold & Silver (Book)</option>
+            <option value="88">Hidden Secrets Of Money</option>
+            <option value="85">WealthCycles.com</option>
+            <option value="12">YouTube</option>
+            <option value="15">Facebook, Twitter, other social media</option>
+            <option value="5">Friend or family (Word of Mouth)</option>
+            <option value="86">Another Website</option>                                       
+          </select>
+        </div><!-- /cntrl-group --> 
+      </div> <!-- /row -->
+      <div class="row-fluid space-top-20"> 
+        <div class="span12 form-horizontal">          
+          <label class="inline">Would you like to receive our free weekly newsletter?</label>        
+          <label class="radio inline"> 
+            <input type="radio" class="pull-right" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              Yes
+          </label>
+          <label class="radio inline">
+            <input type="radio" class="pull-right" name="optionsRadios" id="optionsRadios1" value="option1" >
+              No
+          </label>
+        </div><!-- /end4 -->
+      </div><!-- /row --> 
+      <div class="row-fluid space-top-20">
+        <div class="control-group">
+          <label class="control-label checkbox" for="confirmation">
+          <input id="policy" type="checkbox" class="niceCheck clearfix" value="yes" id="answer" name="policy" data-color="green" />
+            <a href="#toc" data-toggle="modal" >I have read and fully understand the Terms, Conditions, Policies & Procedures</a></label>
+          
+            <div class="controls">
+             
+          </div><!-- /controls -->
+        </div> <!-- /cntrl-group -->  
+         
+      </div><!-- /row -->
+    
+      <div class="row-fluid space-top-20"> 
+        <input id="signupSubmit" class="btn btn-large btn-block btn-success" type="submit" value="Create My Account"> 
+      </div><!-- /row -->                 
+    </form>
+    </div> 
+     
+  </div><!-- /row -->
+  
+  
+<!-- Modal -->
+<div id="toc" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">User Agreement</h3>
+  </div>
+  <div class="modal-body">
+    This Service Agreement (the "Agreement") governs your use of the GoldSilver.com™ website, services and products. GoldSilver stands behind every product we sell, we guarantee the authenticity of all our products. The Agreement serves as a reference guide to provide the Customer ("you" or "your") \with a concise and comprehensive understanding of the policies and procedures for utilizing the GoldSilver.com™ website, any affiliated website, any of the informational services provided by Goldsilver.com™, and for the purchasing, selling and storing of precious metals with Silver & Gold, Inc. dba GoldSilver.com™ ("GoldSilver", "we", "us" and "our") via the GoldSilver.com™ website, telephone or e-mail. <h5>1.	PRIVACY</h5> <p>GoldSilver respects your right to privacy. Registration data and other information about you are subject to our Privacy Policy, which is incorporated here by this reference. If you are located outside of the United States, note that information you provide to us is being sent to us in the United States. By registering with Goldsilver.com™, you consent to your data being sent to us in the United States. If you believe someone has accessed GoldSilver.com™ using your user name and password without your authorization, you must immediately notify us via email. You may contact us via the Contact Us page located on Goldsilver.com™.</p><h5> 2.	REGISTRATION</h5> Non-registered users may only access and utilize the public portions of the GoldSilver.com™ website subject to the terms of this Agreement. In order to access the remaining features of the GoldSilver.com™ website or to purchase from or sell precious metals to GoldSilver you will have to become a member of GoldSilver.com™ by registering and creating a GoldSilver.com™ account. When you create your account, you must provide accurate and complete information, and keep that information updated. You are solely responsible for maintaining the confidentiality of your user name and password and for any and all activities (including purchases) that are conducted through your account. Further, you are responsible for any fees or charges incurred to your account by accessing GoldSilver.com™ through an Internet access provider or other third party service. You agree to keep all privileged information strictly confidential; this expressly includes all electronic or telephonic communications between you and GoldSilver, access to your account and any information accessible through your account. A GoldSilver account may be registered only to a unique user and only the registered user may access the account; multiple persons are expressly prohibited from registering a single shared account. You may never use another user's account nor may you allow another to use your user account. Your account is not transferable to any third party. <h5>3.	YOUR INVESTMENT ACKNOWLEDGEMENTS, REPRESENTATIONS AND WARRANTIES</h5><p> You acknowledge that investing in precious metals involves risks and may not be suitable for everyone. You are therefore urged to consult with your own financial advisor(s) before making a decision. Past performance is not necessarily indicative of future results. Investing in precious metal(s) often involves a degree of risk that makes them unsuitable for certain individuals. You should carefully consider the suitability of precious metals as a personal investment choice before making any decisions that may affect your financial situation. GoldSilver makes no recommendations, projections, representations, or guarantees with respect to future prices, or performance of precious metals. Precious metals are not FDIC insured and may lose value. You acknowledge that you are subject to a variety of risks, which risks are beyond the control of GoldSilver, and you also acknowledge that GoldSilver is not liable or responsible for those risks. Those risks include, without limitation, risks associated with the price volatility of the products, particularly precious metals. Under certain market or other conditions (such as technological or other disruptions), you may not be able to liquidate the purchased products or, liquidate the purchased products at prices acceptable to you.</p><h5> 4.	ABSENCE OF RELATIONSHIP</h5><p> You represent and warrant to GoldSilver that you have sufficient experience and knowledge to make informed decisions to purchase from or sell precious metals to GoldSilver. You acknowledge that you are making all of your own decisions in connection with purchases or sales and that you have not relied on any information made available by GoldSilver, including without limitation GoldSilver.com™ or affiliate websites, and that GoldSilver is not making any recommendation with respect to such purchases or sales. You further acknowledge that there is no fiduciary duty between you and GoldSilver. The sole relationship between you and GoldSilver is purchaser-seller relationship. No other relationship, including, without limitation, any agent-principal relationship, any advisor-advisee relationship, any employee-employer relationship, any franchisee-franchisor relationship, any joint venture relationship or any partnership relationship, exists between you and GoldSilver.</p><h5> 5.	PURCHASING AND SELLING PRECIOUS METALS</h5><p><strong> A.</strong>	Purchasing from GoldSilver. You may purchase precious metals from GoldSilver as an individual, LLC, Corporation, Trust or through your IRA account using U.S. dollars. All individual purchases are transacted via Goldsilver.com™, by telephone or e-mail. You acknowledge that prices for precious metals change throughout the day and that the prices charged by GoldSilver reflect live market prices and therefore all sales are final and cannot be canceled, refunded or returned. Payment in full for orders must be sent within one (1) business day (Monday through Friday, Pacific Time Zone, USA) from the date your purchase is confirmed (the "Order Date"). Payments sent by wire transfer must be sent by the end of the next business day and before the close of your bank's wire transfer cutoff time for that day. The latest a bank wire transfer can be executed for the same day is 5:00 PM EST, however it is your responsibility to know the hours during which your bank performs wire transfers. If your payment is not received within five (5) business days of the Order Date, GoldSilver may implement its Market Loss Policy (as defined below) and shall have the right to apply your initial payment against the amount owed to us. Furthermore, you agree that we may charge your credit or debit card and/ or receive compensation for losses resulting from a defaulted IRA order pursuant to our Market Loss Policy. GoldSilver provides a 2 way market in which you, at your sole discretion, may choose to sell approved gold and/ or silver back to us at our currently offered rates as detailed in Sell Gold & Silver and GoldSilver.com™ Sellback Policy. <hr><strong>B.</strong>	Selling to GoldSilver. You acknowledge that GoldSilver's sellback policy is entirely voluntary and non-exclusive. This means that you may elect to sell product purchased from us to any interested party, including at your sole discretion, back to GoldSilver in accordance with the GoldSilver.com™ Sellback Policy. All sales to GoldSilver are transacted via your account with Goldsilver.com™, by telephone or e-mail. All sales are final and cannot be canceled. A sale is final and the agreement shall be binding when the price and type of precious metal(s) have been locked-in by GoldSilver. In the event you breach the agreement, GoldSilver may implement its Market Loss Policy pursuant to this agreement. The items eligible for sale to us must be a product of like-kind that we carry, in new condition and in increments that we sell at Goldsilver.com™. We reserve the right to charge an assay fee to verify the purity and authenticity of the product that may be charged against the final sellback price. When selling to GoldSilver, we will provide you with a "Sellback Contract" which will include any fees that may be associated with selling back and must be completed, with the product shipped, within one (1) business day of the contract's formation. GoldSilver will provide payment by check or bank wire transfer; bank wire transfers are subject to a one-time transactional fee pursuant to our current policy. The full terms of the agreement are located on the Sell Gold & Silver and GoldSilver.com™ Sellback Policy, which is incorporated here by this reference. We reserve the right to terminate this policy at any time without notice.<hr><strong>C.</strong>	Electronic Order Risks. Order entry systems have been designed to provide an efficient and dependable method for entering orders. Commercial internet service providers are not 100% reliable and a failure by one or more of these providers may affect internet-based order entry. You acknowledge that the order entry system is an electronic mechanical system and as such may be subject to failure beyond the control of GoldSilver. Therefore, GoldSilver shall not be responsible for errors, negligence, inability to execute orders, delays in transmission, delivery or execution of order due to breakdown or failure of transmission or communication facilities, or to any other cause beyond GoldSilver's control or anticipation. You acknowledge that pricing or typographical errors may occur and that therefore, in the event that a product is listed at an incorrect price or with incorrect information due to an error in pricing or product information, GoldSilver reserves the right, at our sole discretion, to refuse or cancel any orders placed for said products. Furthermore, GoldSilver reserves the right to deny any internet trade's confirmation due to market volatility and/ or unusual circumstances or conditions. This includes, without limitation, unexpected unavailability of products. <hr><strong>D.</strong>	Export Compliance. Every product that GoldSilver sells is subject to all U.S export laws. No products may be exported to a national or resident of any country to which the U.S has embargoed goods. Additionally, no products may be exported to anyone on the U.S Department of the Treasuary's Office of Foreign Asset Control's list of Specially Designated Nationals or the U.S Commerce Department Bureau of Industry and Security's Table of Denial Orders. <hr><strong>E.</strong> Death. In the event of your death, GoldSilver will require full documentation of your property interest retained by GoldSilver and proof of death. Proof of death must be an official government document issued by the proper legal authority. Upon confirmation of your death, GoldSilver will freeze your account and to the extent required by law, GoldSilver will act in accordance with the conditions set out in your will, or as instructed by the trustee of your estate. GoldSilver shall be entitled to collect reasonable fees to provide this service. It is your sole responsibility to ensure that such documentation will be provided for in the event of your death. <hr><strong>F.</strong>	Customer Responsibility For Taxes. You acknowledge that you are solely responsible for all taxes that may be incurred as a result of a purchase from or sale to us. GoldSilver will only collect taxes on transactions to the extent explicitly required by law. It is your responsibility to be aware of and properly address any taxes to which you may be subject by the state and/ or federal governments. If you have any questions about taxes, you should consult a tax professional about your unique circumstances. GoldSilver does not represent to provide advice or recommendations about your specific taxes and any statements made by us are only for the purpose of raising issues for you to discuss with your tax professional. At no time should any tax information provided by GoldSilver constitute legal advice nor should any information be used or relied upon by you to avoid taxes or penalties. </p><h5>6.	MARKET LOSS POLICY</h5><p> Upon securing a purchase price for the precious metal(s) to be shipped, your order is deemed binding and cannot be canceled. Upon securing a sale price for your metals to GoldSilver, your offer to sell your metals to GoldSilver shall be deemed accepted and both parties shall be bound to the agreement. However, should you fail to meet your obligation whether purchasing from or selling to GoldSilver, we may redeem the precious metals at the current market price. You shall be responsible for any losses suffered by GoldSilver, all additional charges arising as a result of the redemption, and a single Redemption Fee of two hundred United States dollars ($200.00 USD) per transaction. Without limiting any other rights and remedies available to GoldSilver, you authorize GoldSilver to deduct any losses, additional costs and/or the Redemption Fee from your account, or, if you do not have a positive balance in your account, you agree to make this payment to GoldSilver immediately upon receipt of an invoice or other written notice from GoldSilver. Any market gains at the time of redemption shall remain the sole property of GoldSilver. Because all GoldSilver products are priced with respect to the spot price of the metals, this policy applies to all GoldSilver products. </p><h5>7.	STORING PRECIOUS METALS</h5> You are solely responsible for the storage of your metals. We recommend you exercise caution and discretion when deciding on your method of storage. GoldSilver assumes no responsibility after good delivery of product(s) for any consequence resulting from storing your metals whether home delivered, with any IRA custodian / facility, or through the use of direct professional storage services listed on our website. At your request, GoldSilver can provide Master/ Sub-account storage and/ or private storage options for your precious metals with depositories selected by GoldSilver. Storage options through us are only available for bullion products sold by us. In the event you choose to store your metals with us in a Master/ Sub-account, you must first read and agree to the terms and conditions set forth in the specific Third Party Storage Agreement. GoldSilver may have a fee arrangement with the storage facility through which we may receive compensation. In the event GoldSilver needs to change depositories for its Master/Sub-Accounts, you will be notified of the new depository location within 30 calendar days. In the event that you are delinquent on your storage accounts, i.e. storage fees have not been paid up to date, GoldSilver will notify you of your obligation to pay for storage. Where an account is at least 90 days past due, that account may be canceled at the sole discretion of GoldSilver, and we are entitled to liquidate metals as necessary to cover the amount owed by you pursuant to our Vault Storage Agreement, incorporated here by reference. <h5>8.	THE GOLDSILVER INSIDER PROGRAM</h5> The GoldSilver Insider Program provides qualifying Insider Program Members, for the life of the account, with exclusive access to ongoing market updates, charts, educational information and insight to the current precious metal strategies being executed by Mike Maloney and GoldSilver in accordance with the Wealth Cycles Principle. In other words, you get insight to and can follow along with specific market strategies being implemented and applied by Mike Maloney and GoldSilver. Please note that all information, strategies or communications made through the GoldSilver Insider Program are for informational purposes only and participants in the GoldSilver Insider Program reaffirm the acknowledgements, representations, warranties and absence of relationship pursuant to this Agreement. Access to the GoldSilver Insider Program will automatically be granted to a GoldSilver registered user who meets one of the following requirements at any time during the life of the account:
+a.	Purchase at least 500 ounces of silver through GoldSilver; b.	Purchase at least 10 ounces of gold through GoldSilver; or c.	Purchase the GoldSilver Insider Program itself for the amount set forth on the GoldSilver.com™ website.
+ Pursuant to the terms of registration, you agree not to share your user account with any other person. Access to GoldSilver Insider Program is personal to you and you may not assign any of your rights or obligations under this agreement to anyone. You may not (i) modify, reproduce, duplicate, or distribute copies of any of the information or content made available through the Insider Program; (ii) create derivative works from Insider Program content; (iii) rent, loan, lease, sublicense, transfer, network, reproduce, display, distribute, or otherwise make any of the Insider Program information or content available to any third party. You acknowledge that any unauthorized use of GoldSilver's Insider Program content is strictly prohibited and that such unauthorized use will cause substantial economic damage and losses to GoldSilver. All content is copyrighted by GoldSilver and protected by the domestic and international copyright laws. All rights reserved. GoldSilver reserves the right to modify or terminate the GoldSilver Insider Program in its sole and absolute discretion. <h5>9.	NOTICE AND USE OF INTERNET FOR COMMUNICATION</h5> Consistent with the terms of Registration and Privacy, you agree that we may rely on any instructions or communications from your account as authentic and coming directly from you. By providing GoldSilver.com™ your email address, you consent to our using the email address provided by you to send you service-related notices, including any notice required by law, in lieu of written communication by postal mail. We may use your email address to send you other messages, including changes to GoldSilver.com™ features and special offers. You may also unsubscribe to certain email communications at any time. You acknowledge that it is your responsibility to have reliable e-mail services and that our messages will be transmitted to you without interference and that you will not attempt to circumvent receipt of any communications. Therefore, we are entitled to rely on your receipt of messages from us; and that any future access of the GoldSilver.com™ website, GoldSilver products, services or contact with GoldSilver shall constitute acceptance of our most current terms. It is your responsibility to update us for any changes to your email and to ensure that any communications from us will be received by you. <h5>10.	CODE OF CONDUCT</h5> Using the GoldSilver.com™ website or any of GoldSilver's products or services, you agree not to: (a) restrict or inhibit any other visitor or member from using any GoldSilver.com™ product or service, including, without limitation, by means of "hacking" or "cracking" or defacing any portion of the GoldSilver.com™ website; (b) use the GoldSilver.com™ website or any GoldSilver.com™ product or service for any unlawful purpose; (c) express or imply that any statements you make are endorsed by us, without our prior written consent; (d) transmit (i) any content or information that violates any law or regulation or is fraudulent, threatening, harassing, abusive, libelous, defamatory, obscene or otherwise objectionable, or infringes on our or any third party's intellectual property or other rights; (ii) any material, non-public information about companies without the authorization to do so; (iii) any trade secret of any third party; or (iv) any advertisements, solicitations, chain letters, pyramid schemes, investment opportunities, or other unsolicited commercial communication (except as otherwise expressly permitted by us); (e) engage in spamming; (f) transmit any software or other materials that contain any virus, worm, time bomb, Trojan horse, or other harmful or disruptive component; (g) modify, adapt, sublicense, translate, sell, reverse engineer, decompile or disassemble any portion of any of the GoldSilver.com™ website; (h) remove any copyright, trademark, or other proprietary rights notices contained in the GoldSilver.com™ website; (i) "frame" or "mirror" any part of the GoldSilver.com™ web site without our prior written authorization; (j) use any robot, spider, site search/retrieval application, or other manual or automatic device or process to retrieve, index, "data mine," or in any way reproduce or circumvent the navigational structure or presentation of any GoldSilver.com™ product or service or its contents; (k) harvest or collect information about visitors to or members of GoldSilver.com™ without their express consent; (l) or permit anyone without an account or subscription to use any GoldSilver.com™ product or service through your subscription, user name or password. While using the GoldSilver.com™ website, or GoldSilver products or services you agree to comply with all applicable laws, rules and regulations. <h5>11.	INTELLECTUAL PROPERTY RIGHTS</h5> All content contained on GoldSilver.com™ website or otherwise provided to you by GoldSilver such as text, graphics, logos, icons, images, articles, audio and video clips, digital downloads, data compilations, charts and software (collectively, "Content"), is our property or the property of our licensors or licensees, and the compilation of the Content on the Website is our exclusive property, protected by the United States trademark and copyright laws. All software used on the GoldSilver.com™ website is our property or the property of our software suppliers and protected by United States trademark and copyright laws. Any trademarks, service marks, graphics, logos, page headers, icons, scripts and trade names (the "Marks") contained on the GoldSilver.com™ website or otherwise used by GoldSilver are proprietary to us or our licensors or licensees. Our Marks may not be used in connection with any product or service that is not ours in any manner that is likely to cause confusion among users or that disparages or discredits us or anyone else. All other Marks not owned by us that appear on the Website are the property of their respective owners, who may or may not be affiliated with, connected to, or sponsored by us. We grant you a limited license to access and make personal use of the GoldSilver.com™ website, Content and Marks pursuant to the terms of this Agreement. The GoldSilver.com™ website, all Content and the Marks may not be copied, reproduced, republished, downloaded (other than page caching), uploaded, posted, transmitted or distributed in any way, or sold, resold, visited, or otherwise exploited for any commercial purpose, except that you may download one (1) copy of the Content that we make available to you for such purposes on a single computer for your personal, noncommercial, home use only, provided that you: (a) keep intact all copyright, trademark and other proprietary rights notices; (b) do not modify any of the Content or Marks; (c) do not use any Content or Marks in a manner that suggests an association with any of our products, services or brands; and (d) do not download or save Content so as to avoid future downloads from the Website. Your use of Content or the Marks on any other website or computer environment is strictly prohibited. The license granted to you does not include, and specifically excludes, any rights to: (a) resell or make any commercial use of the GoldSilver.com™ website, any Content or any of the Marks; (b) collect and use any product listings, descriptions, or prices used by GoldSilver; (c) make any derivative use of the GoldSilver.com™ website or Content; (d) download or copy account information for the benefit of anyone else other than yourself; or (e) use any form of data mining, robots, or similar data gathering and extraction tools. Any unauthorized use automatically terminates the license granted to you hereunder. You are granted a limited, revocable, and non-exclusive right to create a hyperlink only to our home page provided that the link does not portray us or our licensors or licensees, or their respective products or services, in a false, misleading, derogatory, or otherwise offensive matter. You may not use any of our or any such party's intellectual property as part of the link without our and each such party's express prior written consent. <h5>12.	GOLDSILVER REPRESENTATIONS, WARRANTIES, DISCLAIMERS AND LIMIT OF LIABILITY</h5> GoldSilver is a precious metals dealer and publisher of information pertaining to monetary history, the global economy and the precious metals sector and is not a registered investment advisor or stock broker/dealer. Any information appearing on this website or in any other publication by GoldSilver is not an endorsement or recommendation of any company or product and no presentation is made, or advice given regarding the advisability of purchasing products from or investing in any company, product, service, newsletter, website, or purchasing or selling any security or product. Site users should always conduct their own research and due diligence to obtain professional advice before making any investment decisions. Companies, products, services, newsletters and websites referred to by, or in any communication from GoldSilver are for educational, informational and entertainment purposes only. GoldSilver guarantees the quality, and condition, and authenticity of all its precious metals. GoldSilver does not, however, make any representations, recommendations, projections, warranties or guarantees of any kind, either expressed or implied, as to the performance of its precious metals with respect to future prices or any return on investment. GoldSilver will not be liable for any loss or damage caused by reliance on information obtained in any of our newsletters, literature, reports, e-mail correspondence, website, or any other communication from GoldSilver. You agree that your access to and use of GoldSilver.com™ website and the Content available through GoldSilver.com™ is on an "as-is", "as available" basis. GoldSilver and its subsidiaries, affiliates, shareholders, directors, officers, employees, agents, information providers and contributors and licensors (the "GoldSilver.com parties") specifically disclaim any representation or warranty, express or implied, including, without limitation, any representation or warranty of merchantability, non-infringement or fitness for a particular purpose. Without limiting the foregoing, the GoldSilver.com™ parties do not warrant: that the content is accurate, reliable or correct; that the service will meet your requirements; that the service will be available at any particular time or location, uninterrupted or secure; that any defects or errors will be corrected; or that the service is free of viruses or other harmful components. Your use of GoldSilver products or services, the materials on the GoldSilver.com™ website and any materials provided through the website are entirely at your own risk. You acknowledge that the GoldSilver.com™ parties will not be liable (jointly or severally) to you or any other person as a result of your access or use of GoldSilver.com™ website or any GoldSilver products or services for indirect, consequential, special, incidental, punitive, or exemplary damages, including, without limitation, lost profits, lost savings and lost revenues (collectively, the "excluded damages"), whether or not characterized in negligence, tort, contract, or other theory of liability, even if any of the GoldSilver.com™ parties have been advised of the possibility of or could have foreseen any of the excluded damages, and irrespective of any failure of an essential purpose of a limited remedy. You agree that the maximum liability the GoldSilver.com™ parties for all damages, losses, and causes of action under this agreement shall be the total amount paid by you, if any, for access to any GoldSilver products or services. The foregoing limitation of liability shall apply to the fullest extent permitted by law in the applicable jurisdiction. <h5>13.	LINKS AND OTHER WEBSITES</h5> Our products and services may contain links to other Internet websites or resources. Furthermore, other Internet websites or resources may link to our products and services. GoldSilver neither controls nor endorses such other websites, nor will it review or approve any content that appears on such other websites. If you choose to follow a link to another web site, the terms of service and privacy policy of that website, not the GoldSilver.com™ website, apply. You acknowledge and agree that GoldSilver shall not be held responsible for the legality, accuracy, or inappropriate nature of any content, advertising, products, services, or information located on or through any other websites, nor for any loss or damages caused or alleged to have been caused by the use of or reliance on any such content. 14.	INDEMNIFICATION You agree to indemnify, defend and hold GoldSilver harmless from and against any and all claims, damages, losses, costs (including reasonable attorneys' fees), or other expenses that arise directly or indirectly out of or from (a) your breach of this Agreement, including any violation of the Code of Conduct above; (b) any allegation that any materials that you submit to us or transmit to our web sites infringe or otherwise violate the copyright, trademark, trade secret or other intellectual property or other rights of any third party; and/or (c) your activities in connection with any GoldSilver products or services. 15.	CONSENT TO ARBITRATION; WAIVER OF JURY TRIAL; ATTORNEY FEES It is the goal of GoldSilver to resolve any disagreement or dispute expeditiously. Therefore, you and GoldSilver hereby agree that the exclusive forum for the resolution of all disagreements and disputes is by arbitration through the Judicial Arbitration and Mediation Services, Inc. (JAMS) in accordance with the JAMS Commercial Arbitration Rules in Los Angeles, California. You and GoldSilver further agree to waive your right to trial by jury in connection with any disagreement or dispute resulting from, or in connection with this Agreement. The decision of the arbitrator shall be final and binding upon the parties. In the event of any dispute, the prevailing party shall be entitled to recover all of its reasonable attorney fees and costs, including, but not limited to, the costs of the arbitration. The arbit's decision may be entered in any jurisdiction in which the party has assets in order to collect any monies due pursuant to the arbitration award. <h5>16.	WINDING-UP OF GOLDSILVER</h5> In the event of sale, dissolution or other process that requires transfer or liquidation of GoldSilver assets, GoldSilver will act in accordance to the governing law of the applicable jurisdiction. The sale or dissolution of GoldSilver does not affect your agreement with your storage company unless you are given notice otherwise. 17.	GOVERNING LAW This Agreement shall be governed by, and interpreted in accordance with the laws of the State of California, without regard to conflict of laws or principles. 18.	FORCE MAJEURE If GoldSilver cannot perform any obligation hereunder as a result of any event that is beyond its control, including, but not limited to, acts of war, acts of terrorism, natural disasters, disruptions to shipping and distribution channels, GoldSilver's delay or failure to perform such obligation shall be excused and GoldSilver shall not be liable for any damages as a result of, or in connection with, such delay or such failure. <h5>19.	AMENDMENTS</h5> GoldSilver may change the terms of this Agreement or the services or products that it offers to you at any time without notice. You may access this document at any time by selecting the Terms of Use link located on the GoldSilver.com™ website. Your use of GoldSilver.com™ website or any of the GoldSilver products or services after changes are made to this Agreement means that you agree to be bound by such changes. As our business changes constantly, this Agreement and other pertinent company policies may change also. You should check our website frequently to see recent changes. <h5>20.	GOLDSILVER RIGHTS AND REMEDIES; WAIVER</h5> Upon your failure to comply with your obligations to GoldSilver, GoldSilver shall exercise all of its rights and remedies available, whether at law, in equity or otherwise, as set forth in this Agreement. Without limiting its rights and remedies, GoldSilver may, at its sole discretion, suspend, terminate or turn your account over to a collection agency or an attorney for appropriate legal action. Any delay or failure on the part of GoldSilver in exercising its right or remedy shall not constitute a waiver of that right or remedy and no single or partial exercise by GoldSilver of any right or remedy shall preclude other or further exercise of that right or remedy or the exercise of any other right or remedy. 21.	OTHER LANGUAGE TRANSLATIONS For Customer convenience, GoldSilver may have this Agreement translated in other languages, however the terms of this Agreement shall be binding according to its interpretation in the English language only. This Agreement in any language other than English is translated in good faith to be as accurate as possible but shall not be binding. Customer acknowledges and agrees that this agreement has been prepared in English, and therefore the English version shall prevail and be binding even though other language translations may also be prepared. <h5>22.	SEVERABILITY</h5> This Agreement is intended to be enforceable to the fullest extent permitted by applicable law. If any terms of this Agreement are held to be unenforceable for any reason, such unenforceability shall not affect the other terms of this Agreement and the terms that would otherwise be unenforceable shall be enforced to the fullest extent that it would be enforceable. <h5>23.	ASSIGNMENT</h5> You may not assign this Agreement or any of your rights or your obligations under this Agreement without the prior written consent of GoldSilver, which may be granted or withheld by GoldSilver in its sole discretion. This Agreement shall be binding on all permitted assigns and successors of you and GoldSilver. <h5>24.	TERMINATION</h5> You or GoldSilver may terminate this Agreement, with or without cause, at any time by written notice to the other party. The termination shall not affect the rights or obligations of you and GoldSilver with respect to the period prior to termination. <h5>25.	INTEGRATION</h5> This Agreement contains the final and entire agreement between you and GoldSilver regarding your use of GoldSilver.com™ website and all GoldSilver products or services and supersedes all previous and contemporaneous verbal or written negotiations, understandings, or agreements between you and GoldSilver.
+  </div>
+ 
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+           		
 </div> <!--end: Container-->
-
 
 </body>
 </html>
