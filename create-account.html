@@ -5,7 +5,7 @@
 
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>SIGN IN</title> 
+	<title>CREATE ACCOUNT</title> 
 	<meta name="description" content="Smart Bootstrap Theme"/>
 	<meta name="keywords" content="Template, Theme, web, html5, css3, Bootstrap" />
 	<meta name="author" content="Łukasz Holeczek from creativeLabs"/>
@@ -24,13 +24,14 @@
 	<!-- end: Facebook Open Graph -->
 
     <!-- start: CSS -->
-  <link href="css/bootstrap.css" rel="stylesheet">
-  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="css/checkout.css" rel="stylesheet">
 	<link href="css/table.css" rel="stylesheet">
 	<link href="css/Font-Awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/steps.css" rel="stylesheet">
 	
+	
+
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->
 
@@ -88,239 +89,161 @@ $(document).ready(function(){
       $('.'+this.id).addClass('success')
     }
   })
-  $('#signup').hide();
 
 });
 </script>
+
+
+
+
 </head>
+
+
 
 <body class="bootstrap">
 	
-		<!--start: Header -->
-	<header>		
+	<!--start: Header -->
+	<header>
+		
 		<!--start: Container -->
-		<div class="container ">			
+		<div class="container ">
+			
 			<!--start: Row -->
 			<div class="row-fluid">
-			   <div class="span3">
-			     <h1>Checkout</h1>			   
-			   </div><!-- /span3 -->
-  			 <div class="span9 pull-right">
-  			   <div class="multi-step four-steps numbered color-2">
-          	<ol>
-          		<li class="current">
-          			<div class="wrap">
-          				<p class="title">Sign In</p>
-          				<p class="subtitle">Enter your credentials</p>
-          			</div>
-          		</li>
-          		<li>
-          			<a href="step-1.html"><div class="wrap">
-          				<p class="title">Select Shipping</p>
-          				<p class="subtitle">Select destination</p>
-          			</div></a>
-          		</li>
-          		<li>
-          			<a href="step-2.html"><div class="wrap">
-          				<p class="title">Select Payment</p>
-          				<p class="subtitle">Choose the payment method</p>
-          			</div></a>
-          		</li>
-          		<li>
-          			<a href="step-3.html"><div class="wrap">
-          				<p class="title">Submit</p>
-          				<p class="subtitle">Review you order</p>
-          			</div></a>
-          		</li>
-          	</ol>
-          </div>
-  			 </div><!-- /span9 -->													
+			 <div class="span8 pull-right">
+  			 
+			 </div>
+					
+								
 			</div>
-			<!--end: Row -->			
+			<!--end: Row -->
+			
 		</div>
-		<!--end: Container-->						
+		<!--end: Container-->		
+		
+	
+			
 	</header>
 	<!--end: Header-->
+				
 		
-<div class="container">
-  <div class="row-fluid">				
-      <div class="span12">	  				
-          <table class="table table-striped table-condensed" id="table-review">
-            <thead>
-              <tr>
-                <td>Product Description</td>
-                <td></td>
-                <td>Item Price</td>
-                <td>Quantity</td>
-                <td></td>
-                <td>Total</td>
-              </tr>  
-            </thead>
-            <tfoot>
-              <tr>
-                <td colspan="5">SUB-TOTAL</td>
-                <td>2342</td>
-              </tr>
-              <tr>
-                <td colspan="5">SHIPPING AND INSURANCE</td>
-                <td>2342</td>					
-              </tr>
-              
-              <tr class="warning">
-                <td colspan="5">CALIFORNIA TAX 9.25%</td>
-                <td>2342</td>					
-              </tr>
-              <tr>
-                <td colspan="5">TOTAL</td>
-                <td>$12,405.23</td>					
-              </tr>								
-            </tfoot>
-            <tbody> 
-              <tr>
-                 <td class="hidden-phone"><img src="img/products/gold_eagle.png" class="hidden-phone" alt="gold_eagle" width="75" height="75" /></td>
-                <td><a href"#">American Gold Eagle 1/2 Oz</a></td>
-                <td class="qprice">$899.11</td>
-                <td class="qedit">2</td>
-                <td><a href="#" class="link-small">Remove</a></td>
-                <td class="qtotal">$1,798.22</td>
-              </tr>
-              <tr>
-                <td class="hidden-phone"><img src="img/products/gold_eagle.png"  alt="gold_eagle" width="75" height="75" /></td>
-                <td><a href"#">American Gold Eagle 1/2 Oz</a></td>
-                <td class="qprice">$899.11</td>
-                <td class="qedit">2</td>
-                <td><a href="#"class="link-small">Remove</a></td>
-                <td class="qtotal">$1,798.22</td>
-              </tr>
-            </tbody>
-          </table> 				
-    </div> <!-- END span12 -->					
-  </div> <!--end: Row-->
+<div class="container">		<!--start: Container -->
+  <div class="row-fluid">	
 
-  <div class="row-fluid">
-   <div class="span4">
-    <h3>Returning Customers</h3>
-    <em class="blue">I have an account</em>     
-   </div> <!-- /log in form -->	
-  
-   <div class="span8">
-    <h3>Create an Account</h3>
-    <em class="blue">I have an account</em>
-    <form id="signup"style="background:#fefcf7;padding:10px;">
-      <div class="row-fluid">                                                 
-        <div class="control-group span6 firstName">
-          <label class="control-label " for="firstName">First Name</label>
-          <div class="controls valid-icon">
-            <div class="input-prepend">
-              <span class="add-on"><i class="icon-user"></i></span>
-              <input id="firstName" class="span11" name="firstName" type="text" placeholder="First Name" />
-            </div>
-          </div>
-        </div><!-- /cntrl-group -->       
-        <div class="control-group span6 lastName">
-          <label class="control-label " for="lastName">Last Name</label>
-          <div class="controls valid-icon">
-            <div class="input-prepend">
-              <span class="add-on"><i class="icon-user"></i></span>
-              <input id="lastName" name="lastName" type="text" class="span11" placeholder="Last Name" />
-            </div>
-          </div>
-        </div> <!-- /cntrl-group -->      
-      </div> <!-- /row -->
-      <div class="row-fluid">                                                 
-        <div class="control-group span6 phoneNumber">
-          <label class="control-label " for="phoneNumber">Phone Number</label>
-          <div class="controls valid-icon">
-            <div class="input-prepend">
-              <span class="add-on"><i class="icon-phone"></i></span>
-              <input id="phoneNumber" class="span11" name="phoneNumber" type="text" />
-            </div>
-          </div>
-        </div><!-- /cntrl-group -->            
-        <div class=" span6">
-          <a href="#" id="phone-tip" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top"><em style="line-height:76px;margin-right:5px;">Why do you need this?</em></a><i class="icon-question-sign"></i>
-        </div> <!-- /cntrl-group -->      
-      </div> <!-- /row -->
-      <div class="row-fluid">                                                 
-        <div class="control-group span6 email">
-          <label class="control-label" for="email">Email Address</label>
-          <div class="controls valid-icon">
-            <div class="input-prepend">
-              <span class="add-on"><i class="icon-envelope"></i></span>
-              <input id="email" class="span11" name="email" type="text" placeholder="myaccount@example.com" />
-            </div>
-          </div>
-        </div><!-- /cntrl-group -->       
-      </div> <!-- /row -->
-      <div class="row-fluid">                                                 
-        <div class="control-group span6 password">
-          <label class="control-label " for="password">Password</label>
-          <div class="controls valid-icon">
-            <div class="input-prepend">
-              <span class="add-on"><i class="icon-key"></i></span>
-              <input id="password" class="span11" name="password" type="password" placeholder="Minimum 6 Characters" />
-            </div>
-          </div>
-        </div><!-- /cntrl-group -->       
-        <div class="control-group span6 confirmation">
-          <label class="control-label " for="confirmation">Confirm Password</label>
-          <div class="controls valid-icon">
-            <div class="input-prepend">
-              <span class="add-on"><i class="icon-key"></i></span>
-              <input type="password" id="confirmation" name="confirmation" type="text" class="span11" placeholder="Re-type Password"  />
-            </div>
-          </div>
-        </div> <!-- /cntrl-group -->      
-      </div> <!-- /row -->
-      <hr>
-    
-      <div class="row-fluid">      
-        <div class="span6">
-          <label class="control-label" for="streetOne">How did you hear about us?</label>        
-          <select id="company" class="span12" name="streetOne" type="select"  />
-            <option value="0">Please Select:</option>
-            <option value="1">Google, Bing, Other (Search Engine)</option>
-            <option value="2">Guide to Investing in Gold & Silver (Book)</option>
-            <option value="88">Hidden Secrets Of Money</option>
-            <option value="85">WealthCycles.com</option>
-            <option value="12">YouTube</option>
-            <option value="15">Facebook, Twitter, other social media</option>
-            <option value="5">Friend or family (Word of Mouth)</option>
-            <option value="86">Another Website</option>                                       
-          </select>
-        </div><!-- /cntrl-group --> 
-      </div> <!-- /row -->
-      <div class="row-fluid space-top-20"> 
-        <div class="span12 form-horizontal">          
-          <label class="inline">Would you like to receive our free weekly newsletter?</label>        
-          <label class="radio inline"> 
-            <input type="radio" class="pull-right" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-              Yes
-          </label>
-          <label class="radio inline">
-            <input type="radio" class="pull-right" name="optionsRadios" id="optionsRadios1" value="option1" >
-              No
-          </label>
-        </div><!-- /end4 -->
-      </div><!-- /row --> 
-      <div class="row-fluid space-top-20">
-        <div class="control-group">
-          <label class="control-label checkbox" for="confirmation">
-          <input id="policy" type="checkbox" class="niceCheck clearfix" value="yes" id="answer" name="policy" data-color="green" />
-            <a href="#toc" data-toggle="modal" >I have read and fully understand the Terms, Conditions, Policies & Procedures</a></label>
-          
-            <div class="controls">
-             
-          </div><!-- /controls -->
-        </div> <!-- /cntrl-group -->  
+<form id="signup" class="span8" style="background:#fefcf7;padding:10px;">
+  <div class="row-fluid">                                                 
+    <div class="control-group span6 firstName">
+      <label class="control-label " for="firstName">First Name</label>
+      <div class="controls valid-icon">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-user"></i></span>
+          <input id="firstName" class="span11" name="firstName" type="text" placeholder="First Name" />
+        </div>
+      </div>
+    </div><!-- /cntrl-group -->       
+    <div class="control-group span6 lastName">
+      <label class="control-label " for="lastName">Last Name</label>
+      <div class="controls valid-icon">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-user"></i></span>
+          <input id="lastName" name="lastName" type="text" class="span11" placeholder="Last Name" />
+        </div>
+      </div>
+    </div> <!-- /cntrl-group -->      
+  </div> <!-- /row -->
+  <div class="row-fluid">                                                 
+    <div class="control-group span6 phoneNumber">
+      <label class="control-label " for="phoneNumber">Phone Number</label>
+      <div class="controls valid-icon">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-phone"></i></span>
+          <input id="phoneNumber" class="span11" name="phoneNumber" type="text" />
+        </div>
+      </div>
+    </div><!-- /cntrl-group -->            
+    <div class=" span6">
+      <a href="#" id="phone-tip" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top"><em style="line-height:76px;margin-right:5px;">Why do you need this?</em></a><i class="icon-question-sign"></i>
+    </div> <!-- /cntrl-group -->      
+  </div> <!-- /row -->
+  <div class="row-fluid">                                                 
+    <div class="control-group span6 email">
+      <label class="control-label" for="email">Email Address</label>
+      <div class="controls valid-icon">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-envelope"></i></span>
+          <input id="email" class="span11" name="email" type="text" placeholder="myaccount@example.com" />
+        </div>
+      </div>
+    </div><!-- /cntrl-group -->       
+  </div> <!-- /row -->
+  <div class="row-fluid">                                                 
+    <div class="control-group span6 password">
+      <label class="control-label " for="password">Password</label>
+      <div class="controls valid-icon">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-key"></i></span>
+          <input id="password" class="span11" name="password" type="password" placeholder="Minimum 6 Characters" />
+        </div>
+      </div>
+    </div><!-- /cntrl-group -->       
+    <div class="control-group span6 confirmation">
+      <label class="control-label " for="confirmation">Confirm Password</label>
+      <div class="controls valid-icon">
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-key"></i></span>
+          <input type="password" id="confirmation" name="confirmation" type="text" class="span11" placeholder="Re-type Password"  />
+        </div>
+      </div>
+    </div> <!-- /cntrl-group -->      
+  </div> <!-- /row -->
+  <hr>
+
+  <div class="row-fluid">      
+    <div class="span6">
+      <label class="control-label" for="streetOne">How did you hear about us?</label>        
+      <select id="company" class="span12" name="streetOne" type="select"  />
+        <option value="0">Please Select:</option>
+        <option value="1">Google, Bing, Other (Search Engine)</option>
+        <option value="2">Guide to Investing in Gold & Silver (Book)</option>
+        <option value="88">Hidden Secrets Of Money</option>
+        <option value="85">WealthCycles.com</option>
+        <option value="12">YouTube</option>
+        <option value="15">Facebook, Twitter, other social media</option>
+        <option value="5">Friend or family (Word of Mouth)</option>
+        <option value="86">Another Website</option>                                       
+      </select>
+    </div><!-- /cntrl-group --> 
+  </div> <!-- /row -->
+  <div class="row-fluid space-top-20"> 
+    <div class="span12 form-horizontal">          
+      <label class="inline">Would you like to receive our free weekly newsletter?</label>        
+      <label class="radio inline"> 
+        <input type="radio" class="pull-right" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+          Yes
+      </label>
+      <label class="radio inline">
+        <input type="radio" class="pull-right" name="optionsRadios" id="optionsRadios1" value="option1" >
+          No
+      </label>
+    </div><!-- /end4 -->
+  </div><!-- /row --> 
+  <div class="row-fluid space-top-20">
+    <div class="control-group">
+      <label class="control-label checkbox" for="confirmation">
+      <input id="policy" type="checkbox" class="niceCheck clearfix" value="yes" id="answer" name="policy" data-color="green" />
+        <a href="#toc" data-toggle="modal" >I have read and fully understand the Terms, Conditions, Policies & Procedures</a></label>
+      
+        <div class="controls">
          
-      </div><!-- /row -->
-    
-      <div class="row-fluid space-top-20"> 
-        <input id="signupSubmit" class="btn btn-large btn-block btn-success" type="submit" value="Create My Account"> 
-      </div><!-- /row -->                 
-    </form>
-    </div> 
+      </div><!-- /controls -->
+    </div> <!-- /cntrl-group -->  
+     
+  </div><!-- /row -->
+
+  <div class="row-fluid space-top-20"> 
+    <input id="signupSubmit" class="btn btn-large btn-block btn-success" type="submit" value="Create My Account"> 
+  </div><!-- /row -->                 
+</form> 
      
   </div><!-- /row -->
   

@@ -28,6 +28,10 @@
 	<link href="css/checkout.css" rel="stylesheet">
 	<link href="css/table.css" rel="stylesheet">
 	<link href="js/checkable/prettyCheckable.css" rel="stylesheet">
+	<link href="css/Font-Awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/steps.css" rel="stylesheet">
+
+
 	
 	
 
@@ -100,13 +104,16 @@ $(document).ready(function(){
     
     $("#home-options").hide();
     $("#vault-options").hide();
+    $("#vault-sidebar").hide();
+    $("#home-sidebar").hide();
     
     $("#home-choice").click(function(){
       $("#home-box").removeClass("well").addClass("selected-state");
       $("#vault-box").removeClass("selected-state").addClass("well");
       $('#vault-options').hide();
       $('#home-options').fadeIn();
-        	      	  			
+      $('#vault-sidebar').hide();
+      $('#home-sidebar').fadeIn();        	      	  			
 		});
 		
 		$("#vault-choice").click(function(){
@@ -114,12 +121,85 @@ $(document).ready(function(){
 		  $("#home-box").removeClass("selected-state").addClass("well");
 		  $('#home-options').hide();
 		  $('#vault-options').fadeIn();
-       	
-      
-      		  			
+		  $('#home-sidebar').hide();
+		  $('#vault-sidebar').fadeIn();      		  			
 		});
-
-    
+		
+		
+		// Hide all valut location info boxes by default
+		$('.info-hk ').hide();
+		$('.info-slc').hide();
+		$('.info-sg').hide();
+		$('.info-ca').hide();
+		$('.info-mia').hide();
+	
+		
+		//Hong Kong Vault
+		$('#vault-hk').mouseenter(function(){
+  		$('.info-hk').fadeIn();
+  		  if ($('#vault-hk').hasClass('muted')) {
+    		$('#vault-hk').addClass('bg-error');
+      } else {
+        $('#vault-hk').addClass('bg-hlight');
+      };      
+		}).mouseleave(function(){
+  		$('.info-hk').hide();
+  		$('#vault-hk').removeClass("bg-hlight bg-error");		      
+		});
+		
+		//Salt Lake City Vault
+		$('#vault-slc').mouseenter(function(){
+  		$('.info-slc').fadeIn();
+  		  if ($('#vault-slc').hasClass('muted')) {
+    		$('#vault-slc').addClass('bg-error');
+      } else {
+        $('#vault-slc').addClass('bg-hlight');
+      };      
+		}).mouseleave(function(){
+  		$('.info-slc').hide();
+  		$('#vault-slc').removeClass("bg-hlight bg-error");		      
+		});
+		
+		//Singapore Vault
+		$('#vault-sg').mouseenter(function(){
+  		$('.info-sg').fadeIn();
+  		  if ($('#vault-sg').hasClass('muted')) {
+    		$('#vault-sg').addClass('bg-error');
+      } else {
+        $('#vault-sg').addClass('bg-hlight');
+      };      
+		}).mouseleave(function(){
+  		$('.info-sg').hide();
+  		$('#vault-sg').removeClass("bg-hlight bg-error");		      
+		});
+		
+		//Canada Vault
+		$('#vault-ca').mouseenter(function(){
+  		$('.info-ca').fadeIn();
+  		  if ($('#vault-ca').hasClass('muted')) {
+    		$('#vault-ca').addClass('bg-error');
+      } else {
+        $('#vault-ca').addClass('bg-hlight');
+      };      
+		}).mouseleave(function(){
+  		$('.info-ca').hide();
+  		$('#vault-ca').removeClass("bg-hlight bg-error");		      
+		});
+		
+		//Miami Vault
+		$('#vault-mia').mouseenter(function(){
+  		$('.info-mia').fadeIn();
+  		  if ($('#vault-mia').hasClass('muted')) {
+    		$('#vault-mia').addClass('bg-error');
+      } else {
+        $('#vault-mia').addClass('bg-hlight');
+      };      
+		}).mouseleave(function(){
+  		$('.info-mia').hide();
+  		$('#vault-mia').removeClass("bg-hlight bg-error");		      
+		});
+		
+		  
 });
   </script>
 
@@ -136,15 +216,42 @@ $(document).ready(function(){
 	<header>
 		
 		<!--start: Container -->
-		<div class="container ">
-			
+		<div class="container ">			
 			<!--start: Row -->
 			<div class="row-fluid">
-			 <div class="span8 pull-right">
-  			 <img src="img/icons/step-4.png" alt="step-4" width="570" height="110">
-			 </div>
-					
-								
+			   <div class="span3">
+			     <h1>Checkout</h1>			   
+			   </div><!-- /span3 -->
+  			 <div class="span9 pull-right">
+  			   <div class="multi-step four-steps numbered color-2">
+          	<ol>
+          		<li>
+          			<div class="wrap">
+          				<p class="title">Sign In</p>
+          				<p class="subtitle">Enter your credentials</p>
+          			</div>
+          		</li>
+          		<li class="current">
+          			<a href="step-1.html"><div class="wrap">
+          				<p class="title">Select Shipping</p>
+          				<p class="subtitle">Select destination</p>
+          			</div></a>
+          		</li>
+          		<li>
+          			<a href="step-2.html"><div class="wrap">
+          				<p class="title">Select Payment</p>
+          				<p class="subtitle">Choose the payment method</p>
+          			</div></a>
+          		</li>
+          		<li>
+          			<a href="step-3.html"><div class="wrap">
+          				<p class="title">Submit</p>
+          				<p class="subtitle">Review you order</p>
+          			</div></a>
+          		</li>
+          	</ol>
+          </div>
+  			 </div><!-- /span9 -->													
 			</div>
 			<!--end: Row -->
 			
@@ -297,42 +404,60 @@ $(document).ready(function(){
         </div> <!-- /home-options -->
         <div id="vault-options">
         <h3>Now, please select the desired vault storage options. </h3>
-        <table class="table table-striped ">
+        <table class="table storage">
 				
-					<h4>Segregated Storage - Master / Sub</h4>
+					<h4 class="left-heading"><span>Segregated Storage - Master / Sub</span></h4>
 						<thead>
 						<tr>
-							<td class="row-highlight">Location</td>
+							<td class="row-highlight">Vault Location</td>
+							<td></td>
 							<td class="row-highlight">Shipping & Insurance</td>
 							<td class="row-highlight">Notes</td>
 						</tr>
 						</thead>										
-						<tbody>
-						<tr>
+						<tbody>						
+						<tr id="vault-slc">
 							<td>
 								<label class="radio bold">
 									<input type="radio" name="type" id="" value="">
-									Salt Lake City
+									<h4 class="text-success">Salt Lake City</h4> 
 								</label>
 							</td>
-							<td align="center">$23.50</td>
+							<td> <div class="f32"><span class="flag-us"></span></div></td>
+							<td><h4 class="text-success">$23.50</h4></td>
 							<td></td>
 						</tr>
 				      
-						<tr>
-							<td>
+						<tr id="vault-hk" class="muted" disabled="disabled">
+							<td >
 								<label class="radio bold">
-									<input type="radio" name="type" id="" value="" disabled>
-									Hong Kong
-								</label>
+									<input type="radio" name="type" id="" value="" disabled="disabled">
+									<h4 class="text-muted">Hong Kong</h4>  
+								</label>								
 							</td>
-							<td align="center">
-								<p class="error-red">$45.00</p>
+							<td> <div class="f32"><span class="flag-hk"></span></div></td>
+							<td >
+							 <h4 class="text-center">$45.00</h4>								
 							</td>
 							<td>
 								<p class="error-red">This location requires a minimum of</p>
+							</td>				      
+						</tr>
+						
+						<tr id="vault-sg">
+							<td>
+								<label class="radio bold">
+									<input type="radio" name="type" id="" value="" >
+									<h4 class="text-success">Singapore</h4>
+								</label>
 							</td>
-				      
+							<td> <div class="f32"><span class="flag-sg"></span></div></td>
+							<td align="center">
+								<h4 class="text-success">$45.00</h4>
+							</td>
+							<td>
+								<p class="error-red">This location requires a minimum of</p>
+							</td>				      
 						</tr>
 						
 					</tbody>
@@ -344,35 +469,38 @@ $(document).ready(function(){
 					<input type="text" class="span4 " placeholder="Example of title ">
 				</form>
 
-        <table class="table table-striped ">
-				
+        <table class="table">				
 					<h4 class="spacer">Segregated Storage - Direct Account</h4>
 						<thead>
-						<tr>
-							<td class="row-highlight">Location</td>
-							<td class="row-highlight">Shipping & Insurance</td>
-							<td class="row-highlight">Notes</td>
-						</tr>
+  						<tr>
+  							<td class="row-highlight">Vault Location</td>
+  							<td></td>
+  							<td class="row-highlight">Shipping & Insurance</td>
+  							<td class="row-highlight">Vault Name?</td>
+  						</tr>
 						</thead>
 						<tbody>
-						<tr>
+						<tr id="vault-mia">
 							<td>
 								<label class="radio bold">
 									<input type="radio" name="type" id="" value="">
-									Miami
+									<h4 class="text-success">Miami</h4> 
 								</label>
 							</td>
-							<td align="center">$23.50</td>
-							<td></td>
+							<td> <div class="f32"><span class="flag-us"></span></div></td>
+							<td><h4 class="text-success">$23.50</h4></td>
+							<td>Brink’s Singapore Ltd.</td>
 						</tr>				      
-						<tr>
+						<tr id="vault-ca" class="muted" disabled="disabled">
 							<td>
 								<label class="radio bold">
 									<input type="radio" name="type" id="" value="" disabled>
-									Germany								</label>
+									<h4 class="text-muted">Canada</h4> 
+								</label>
 							</td>
+							<td> <div class="f32"><span class="flag-ca"></span></div></td>
 							<td align="center">
-								<p class="error-red">$23.50</p>
+								<h4>$23.50</h4>
 							</td>
 							<td>
 								<p class="error-red">This is an error message</p>
@@ -386,13 +514,122 @@ $(document).ready(function(){
         
 				                   
         </div><!-- /vault-options -->
-       
-        
-        
-        
-      </div><!-- /span8 -->
+     </div><!-- /span8 -->
+     
+     <div class="span4"  id="home-sidebar" style="height:800px;background:#f6f6f6;">
+        <div class="sidebar-cap">
+          <strong>Home Delivery Details </strong><span><img src="img/icons/icon_safe_25.png" alt="icon_safe" width="25" height="25"></span>      
+        </div>
+        <div class="span12">
+               
+        </div>
+     </div><!-- /home-sidebar -->
+
       
-      <div class="span4" style="height:800px;background:#efefef; ">
+      <div class="span4"  id="vault-sidebar" style="height:800px;background:#f6f6f6;">
+        <div class="sidebar-cap">
+          <strong>Vault Storage Details </strong><span><img src="img/icons/icon_safe_25.png" alt="icon_safe" width="25" height="25"></span>      
+        </div>
+        <div class="span12">
+          <h4 class="text-info">What is a Master-Sub Account?</h4>
+          <p>90's vegan narwhal you probably haven't heard of them keffiyeh. Kale ch</p>          
+          <h4 class="text-info">What is a Direct Account?</h4>
+          <p>90's vegan narwhal you probably haven't heard of them keffiyeh. Kale ch</p>        
+        </div>
+        <div class="clearfix"></div>
+        
+        <div class="info-hk info-pop">
+          <span class="flag-hk"></span><h4>Honk Kong Storage</h4><hr>
+          <address>
+            <strong>Hong Kong Vault</strong><br>
+            795 Folsom Ave, Suite 600<br>
+            San Francisco, CA 94107<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+          </address>
+          <strong class="text-error">This order ineligible for this vault option because:</strong>          
+        </div><!-- /hong kong info -->
+        
+        <div class="info-slc info-pop">
+           <span class="flag-us"></span><h4>Salt Lake City Storage</h4><hr>          
+          <address>
+            <strong>Salt Lake City Vault</strong><br>
+            795 Folsom Ave, Suite 600<br>
+            San Francisco, CA 94107<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+          </address>
+          <p>90's vegan narwhal you probably haven't heard of them keffiyeh.</p>
+          <hr>
+          <strong>Estimated Monthly Storage Fee:</strong>
+          <p class="lead text-info text-center">$35.74 / Month</p>
+          <em class="text-info"> Based on last month's average spot price</em>
+          <hr>
+          <strong>Worth Pointing Out:</strong>
+          <p>Upon completing your order, you will receive an email outlining additional steps to set up you account.</p>
+        </div><!-- /salt lake city info -->
+        
+        <div class="info-sg info-pop">          
+           <span class="flag-sg"></span><h4>Singapore Storage</h4><hr>                           
+          <address>
+            <strong>Salt Lake City Vault</strong><br>
+            795 Folsom Ave, Suite 600<br>
+            San Francisco, CA 94107<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+          </address>
+          <p>90's vegan narwhal you probably haven't heard of them keffiyeh.</p>
+          <hr>
+          <strong>Estimated Monthly Storage Fee:</strong>
+          <p class="lead text-info text-center">$35.74 / Month</p>
+          <em class="text-info"> Based on last month's average spot price</em>
+          <hr>
+          <strong>Worth Pointing Out:</strong>
+          <p>Upon completing your order, you will receive an email outlining additional steps to set up you account.</p>
+        </div><!-- /hong kong info -->
+        
+        <div class="info-mia info-pop">
+           <span class="flag-us"></span><h4>Miami Storage</h4><hr>                             
+          <address>
+            <strong>Miami Vault</strong><br>
+            795 Folsom Ave, Suite 600<br>
+            San Francisco, CA 94107<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+          </address>
+          <p>90's vegan narwhal you probably haven't heard of them keffiyeh.</p>
+          <hr>
+          <strong>Estimated Monthly Storage Fee:</strong>
+          <p class="lead text-info text-center">$35.74 / Month</p>
+          <em class="text-info"> Based on last month's average spot price</em>
+          <hr>
+          <strong>Worth Pointing Out:</strong>
+          <p>Upon completing your order, you will receive an email outlining additional steps to set up you account.</p>
+        </div><!-- /miami info -->
+        
+        <div class="info-ca info-pop ">
+          <span class="flag-ca"></span><h4>Canada Storage</h4><hr>
+          <address>
+            <strong>Hong Kong Vault</strong><br>
+            795 Folsom Ave, Suite 600<br>
+            San Francisco, CA 94107<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+          </address>
+          
+            <ul class="unstyled">
+              <li>
+                <strong class="text-error">This order ineligible for this vault option because:</strong>
+              </li>
+              <li>
+                <div class="alert alert-error">
+                <i class="icon-ban-circle"></i> This is an error message
+                </div>              
+              </li>
+              <li>
+                <div class="alert alert-error">
+                <i class="icon-ban-circle"></i> This is an error message
+                </div>              
+              </li>
+            
+            
+            </ul>          
+        </div><!-- /canada info -->
       
       </div><!-- /span8 -->
       

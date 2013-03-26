@@ -7,6 +7,10 @@ body {
 	
 }
 
+header{
+  margin: 15px 0px;
+}
+
 .title h1, .title h2, .title h3, .title h4, .title h5, .title h6 {
 	border-bottom: 5px solid #29a9df !important;
 	margin-bottom: -4px !important;
@@ -20,6 +24,25 @@ h4.white{
   color: #efefef;
 }
 
+.left-heading span {
+background: #fff;
+padding: 0 10px;
+margin-left: 0px;
+text-transform: uppercase;
+font-size: 16px;
+color: #444;
+border-right: solid 1px #D1D1D1;
+border-left: solid 1px #D1D1D1;
+}
+
+.left-heading {
+background: url('../img/accents/main_head_bg_penta.png') left center repeat-x;
+text-align: left;
+color: #444;
+margin-bottom: 10px;
+font-weight: 600;
+}
+
 .blue{
   color: blue;
 }
@@ -27,6 +50,14 @@ h4.white{
 
 .bg-form{
   background: #fefcf7;
+}
+
+.bg-hlight{
+  background: #f9f4a0 !important;
+}
+
+.bg-error{
+  background: #fedbe1;
 }
 
 .bg-blue{
@@ -38,6 +69,12 @@ h4.white{
 .bg-test {
   background: #efefef;
   min-height: 300px;
+}
+
+
+.round{
+-webkit-border-radius: 5px;
+border-radius: 5px;  
 }
 
 .pymt-desc{
@@ -207,15 +244,17 @@ opacity: 1;
 transition: opacity 0.2s;
 }
 
-.cards li.visa{background: url('../img/icons/CC/card-icon-visa.png');}
-.cards li.mastercard{background: url('../img/icons/CC/card-icon-mastercard.png');}
-.cards li.amex{background: url('../img/icons/CC/card-icon-amex.png');}
+/*
+.cards li.visa{background: url('../img/ikons/CC/card-ikon-visa.png');}
+.cards li.mastercard{background: url('../img/ikons/CC/card-ikon-mastercard.png');}
+.cards li.amex{background: url('../img/ikons/CC/card-ikon-amex.png');}
 
 .cards li.discover{background-position:-96px 0; width:32px; height:21px}
 .cc_diners{background-position:-128px 0; width:32px; height:21px}
 .cc_jcb{background-position:-160px 0; width:32px; height:21px}
 .visa_back{background-position:0 -22px; width:75px; height:48px}
 .amex_front{background-position:-75px -22px; width:75px; height:48px}
+*/
 
 .visa_back {
 background-position: 0 -22px;
@@ -271,10 +310,33 @@ margin: 4px;
 margin-bottom: 2em;
 }
 
+.sidebar-cap{
+  height: 30px;
+  padding: 10px;
+  background: #0088cc;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
+  position: relative;
+  
+}
+.sidebar-cap strong {
+color: #fff;
+font-weight: 400;
+font-size: 1.3em;
+margin-left: 5px;
+line-height: 1.3em;
+text-shadow: 1px 1px 1px #0b6e9e;
+}
+.sidebar-cap span{
+  float:left;
+  
+}
+
+
 label.valid {
   width: 24px;
   height: 24px;
-  background: url('../img/icons/icon-success.png') center center no-repeat;
+  background: url('../img/ikons/ikon-success.png') center center no-repeat;
   display: inline-block;
   text-indent: -9999px;
   padding-left: 10px;
@@ -291,12 +353,12 @@ label.error {
 margin-bottom: 8px;
 }
 
-.valid-icon input:focus:invalid{
-background: #fff url(../img/icons/invalid.png) no-repeat 98% center;
+.valid-ikon input:focus:invalid{
+background: #fff url(../img/ikons/invalid.png) no-repeat 98% center;
   
 }
-.valid-icon input:required:valid{
-background: #fff url(../img/icons/valid.png) no-repeat 98% center;
+.valid-ikon input:required:valid{
+background: #fff url(../img/ikons/valid.png) no-repeat 98% center;
   
 }
 
@@ -315,6 +377,115 @@ border-bottom: .1em solid #e6f1f3;
 .bootstrap .modal-body{
   max-height: 600px;
 }
+
+.info-pop {
+padding: 5px;
+/*
+ -webkit-box-shadow: 0px 0px 2px 2px rgba(0,0 ,0 , .3);
+  box-shadow: 0px 0px 2px 2px rgba(0,0 ,0 , .5);
+   -webkit-box-shadow: 0px 0px 2px 2px rgba(0,0 ,0 , .3);
+  box-shadow: 0px 0px 2px 2px rgba(0, 0,0 , .3);
+*/
+  border: 1px solid #efefef; 
+  -webkit-border-radius: 5px;
+border-radius: 5px;
+background: #fff;
+box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+
+
+Source: http://designmodo.com/create-web-element-css3/#ixzz2OZt18Riu   
+}
+
+.info-pop h4{
+line-height: .9em;
+
+  
+  
+}
+
+.info-pop span{
+  float: left;
+}
+
+/*
+.info-pop h4:after {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: #3b86c4;
+}
+*/
+
+
+Source: http://designmodo.com/create-web-element-css3/#ixzz2OZDzQRre
+
+
+.ikon-flag-AD, .ikon-flag-AE, .ikon-flag-AF, .ikon-flag-AG, .ikon-flag-AI, .ikon-flag-AL, .ikon-flag-AM, .ikon-flag-AN, .ikon-flag-AO, .ikon-flag-AQ, .ikon-flag-AR, .ikon-flag-AS, .ikon-flag-AT, .ikon-flag-AU, .ikon-flag-AW, .ikon-flag-AX, .ikon-flag-AZ, .ikon-flag-BA, .ikon-flag-BB, .ikon-flag-BD, .ikon-flag-BE, .ikon-flag-BG, .ikon-flag-BH, .ikon-flag-BI, .ikon-flag-BJ, .ikon-flag-BL, .ikon-flag-BM, .ikon-flag-BN, .ikon-flag-BO, .ikon-flag-BR, .ikon-flag-BS, .ikon-flag-BT, .ikon-flag-BW, .ikon-flag-BY, .ikon-flag-BZ, .ikon-flag-CA, .ikon-flag-CD, .ikon-flag-CF, .ikon-flag-CG, .ikon-flag-CH, .ikon-flag-CI, .ikon-flag-CL, .ikon-flag-CM, .ikon-flag-CN, .ikon-flag-CO, .ikon-flag-CR, .ikon-flag-CV, .ikon-flag-CY, .ikon-flag-CZ, .ikon-flag-DJ, .ikon-flag-DK, .ikon-flag-DM, .ikon-flag-DO, .ikon-flag-DZ, .ikon-flag-EC, .ikon-flag-EE, .ikon-flag-EG, .ikon-flag-EH, .ikon-flag-ER, .ikon-flag-ES, .ikon-flag-ET, .ikon-flag-EU, .ikon-flag-FI, .ikon-flag-FJ, .ikon-flag-FK, .ikon-flag-FM, .ikon-flag-FO, .ikon-flag-FR, .ikon-flag-GA, .ikon-flag-GB, .ikon-flag-GD, .ikon-flag-GE, .ikon-flag-GG, .ikon-flag-GH, .ikon-flag-GL, .ikon-flag-GM, .ikon-flag-GN, .ikon-flag-GQ, .ikon-flag-GR, .ikon-flag-GS, .ikon-flag-GT, .ikon-flag-GU, .ikon-flag-GW, .ikon-flag-GY, .ikon-flag-HK, .ikon-flag-HN, .ikon-flag-HR, .ikon-flag-HT, .ikon-flag-HU, .ikon-flag-ID, .ikon-flag-IE, .ikon-flag-IL, .ikon-flag-IM, .ikon-flag-IN, .ikon-flag-IQ, .ikon-flag-IS, .ikon-flag-IT, .ikon-flag-JE, .ikon-flag-JM, .ikon-flag-JO, .ikon-flag-JP, .ikon-flag-KE, .ikon-flag-KG, .ikon-flag-KH, .ikon-flag-KI, .ikon-flag-KM, .ikon-flag-KN, .ikon-flag-KP, .ikon-flag-KR, .ikon-flag-KV, .ikon-flag-KW, .ikon-flag-KY, .ikon-flag-LA, .ikon-flag-LC, .ikon-flag-LK, .ikon-flag-LR, .ikon-flag-LS, .ikon-flag-LT, .ikon-flag-LU, .ikon-flag-LV, .ikon-flag-LY, .ikon-flag-MA, .ikon-flag-ME, .ikon-flag-MG, .ikon-flag-MH, .ikon-flag-ML, .ikon-flag-MM, .ikon-flag-MP, .ikon-flag-MR, .ikon-flag-MS, .ikon-flag-MT, .ikon-flag-MU, .ikon-flag-MV, .ikon-flag-MW, .ikon-flag-MZ, .ikon-flag-NA, .ikon-flag-NE, .ikon-flag-NF, .ikon-flag-NG, .ikon-flag-NI, .ikon-flag-NL, .ikon-flag-NO, .ikon-flag-NP, .ikon-flag-NR, .ikon-flag-NZ, .ikon-flag-OM, .ikon-flag-PA, .ikon-flag-PE, .ikon-flag-PG, .ikon-flag-PH, .ikon-flag-PK, .ikon-flag-PL, .ikon-flag-PN, .ikon-flag-PS, .ikon-flag-PT, .ikon-flag-PW, .ikon-flag-PY, .ikon-flag-QA, .ikon-flag-RS, .ikon-flag-RU, .ikon-flag-RW, .ikon-flag-SA, .ikon-flag-SB, .ikon-flag-SC, .ikon-flag-SD, .ikon-flag-SE, .ikon-flag-SG, .ikon-flag-SH, .ikon-flag-SI, .ikon-flag-SK, .ikon-flag-SM, .ikon-flag-SN, .ikon-flag-SO, .ikon-flag-SR, .ikon-flag-SS, .ikon-flag-ST, .ikon-flag-SV, .ikon-flag-SY, .ikon-flag-SZ, .ikon-flag-TC, .ikon-flag-TD, .ikon-flag-TG, .ikon-flag-TH, .ikon-flag-TJ, .ikon-flag-TM, .ikon-flag-TN, .ikon-flag-TP, .ikon-flag-TR, .ikon-flag-TT, .ikon-flag-TV, .ikon-flag-TW, .ikon-flag-TZ, .ikon-flag-UA, .ikon-flag-UG, .ikon-flag-US, .ikon-flag-UY, .ikon-flag-UZ, .ikon-flag-VC, .ikon-flag-VE, .ikon-flag-VG, .ikon-flag-VI, .ikon-flag-VN, .ikon-flag-VU, .ikon-flag-WS, .ikon-flag-YE, .ikon-flag-ZA, .ikon-flag-ZM, .ikon-flag-BF, .ikon-flag-CU, .ikon-flag-DE, .ikon-flag-IR, .ikon-flag-KZ, .ikon-flag-LB, .ikon-flag-LI, .ikon-flag-MC, .ikon-flag-MD, .ikon-flag-MK, .ikon-flag-MN, .ikon-flag-MO, .ikon-flag-MX, .ikon-flag-MY, .ikon-flag-PR, .ikon-flag-RO, .ikon-flag-SL, .ikon-flag-TO, .ikon-flag-VA, .ikon-flag-ZW{
+	background: url('../img/accents/bootstrap-formhelpers-countries.flags.png') no-repeat;
+	
+}
+
+.ikon-flag-HK{
+	background-position: -1411px 0;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+
+.ikon-flag-US{
+	background-position: -3281px 0;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+.ikon-flag-SG{
+	background-position: -2805px 0;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+
+.flag-us{
+  display:inline-block;
+  height:32px;width:32px;
+  vertical-align:middle;
+  line-height:32px;
+  background:url('../img/accents/flags32.png') no-repeat;
+  background-position:0 -7328px;
+  padding-right: 5px;
+}
+.flag-hk{
+  display:inline-block;
+  height:32px;width:32px;
+  vertical-align:middle;
+  line-height:32px;
+  background:url('../img/accents/flags32.png') no-repeat;
+  background-position:0 -3424px;
+  padding-right: 5px;
+}
+.flag-ca{
+  display:inline-block;
+  height:32px;width:32px;
+  vertical-align:middle;
+  line-height:32px;
+  background:url('../img/accents/flags32.png') no-repeat;
+  background-position:0 -1792px;
+  padding-right: 5px;
+}
+
+.flag-sg{
+  display:inline-block;
+  height:32px;width:32px;
+  vertical-align:middle;
+  line-height:32px;
+  background:url('../img/accents/flags32.png') no-repeat;
+  background-position:0 -6432px;
+  padding-right: 5px;
+}
+
 
 
 
