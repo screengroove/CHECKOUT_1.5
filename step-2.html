@@ -300,16 +300,22 @@ $(document).ready(function(){
                  <td class="hidden-phone"><img src="img/products/gold_eagle.png" class="hidden-phone" alt="gold_eagle" width="75" height="75" /></td>
                 <td><a href"#">American Gold Eagle 1/2 Oz</a></td>
                 <td class="qprice">$899.11</td>
-                <td class="qedit">2</td>
-                <td><a href="#" class="link-small">Remove</a></td>
+                <td class="qedit">
+                  <input value="2" style="width:30px">
+                  <button>Update</button>
+                </td>
+                <td><a href="#" class="link-small remove">Remove</a></td>
                 <td class="qtotal">$1,798.22</td>
               </tr>
               <tr>
                 <td class="hidden-phone"><img src="img/products/gold_eagle.png"  alt="gold_eagle" width="75" height="75" /></td>
                 <td><a href"#">American Gold Eagle 1/2 Oz</a></td>
                 <td class="qprice">$899.11</td>
-                <td class="qedit">2</td>
-                <td><a href="#"class="link-small">Remove</a></td>
+                <td class="qedit">
+                  <input value="2" style="width:30px">
+                  <button>Update</button>
+                </td>
+                <td><a href="#"class="link-small remove">Remove</a></td>
                 <td class="qtotal">$1,798.22</td>
               </tr>
             </tbody>
@@ -641,7 +647,13 @@ $(document).ready(function(){
 		
 </div> <!--end: Container-->
 
-
+<!-- REMOVE CART ITEAM -->
+<script>
+  $('.remove').click(function(){
+    $(this).parentsUntil('tbody').remove()
+  })
+</script>
+<!-- REMOVE CART ITEM -->
 </body>
 </html>
 <!-- Localized -->
