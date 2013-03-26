@@ -23,11 +23,12 @@
 	<!-- end: Facebook Open Graph -->
 
     <!-- start: CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="css/checkout.css" rel="stylesheet">
 	<link href="css/table.css" rel="stylesheet">
 	<link href="js/checkable/prettyCheckable.css" rel="stylesheet">
+	<link href="css/Font-Awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/steps.css" rel="stylesheet">
 	
 	
@@ -191,8 +192,9 @@
                 <td class="qedit">
                   <input value="2" style="width:30px">
                   <button>Update</button>
+                  <a href="#" class="link-remove remove"><i class="icon-minus-sign blue>"></i>Remove Item</a>
                 </td>
-                <td><a href="#" class="link-small remove">Remove</a></td>
+                <td></td>
                 <td class="qtotal">$1,798.22</td>
               </tr>
               <tr>
@@ -202,8 +204,9 @@
                 <td class="qedit">
                   <input value="2" style="width:30px">
                   <button>Update</button>
+                  <a href="#" class="link-remove remove"><i class="icon-minus-sign blue>"></i>Remove Item</a>
                 </td>
-                <td><a href="#"class="link-small remove">Remove</a></td>
+                <td></td>
                 <td class="qtotal">$1,798.22</td>
               </tr>
             </tbody>
@@ -374,23 +377,6 @@
 </div><!-- /wrapper -->
 		
 		
-		
-		<div class="modal control-label fade">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3>Modal header</h3>
-  </div>
-  <div class="modal-body">
-    <p>One fine body…</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn">Close</a>
-    <a href="#" class="btn btn-primary">Save changes</a>
-  </div>
-</div>
-		
-
-
 
 <!-- end: Java Script -->
 
@@ -444,7 +430,7 @@
 
 <!-- REMOVE CART ITEAM -->
 <script>
-  $('.remove').click(function(){
+  $('.remove-link').click(function(){
     $(this).parentsUntil('tbody').remove()
   })
 </script>
