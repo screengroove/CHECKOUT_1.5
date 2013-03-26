@@ -89,6 +89,12 @@ $(document).ready(function(){
     }
   })
   $('#signup').hide();
+  
+  $('#toggleButton').click(function() {
+    $('#signup').slideToggle('slow');
+    $('#toggleButton').hide();
+    });
+   
 
 });
 </script>
@@ -200,12 +206,47 @@ $(document).ready(function(){
   <div class="row-fluid">
    <div class="span4">
     <h3>Returning Customers</h3>
-    <em class="blue">I have an account</em>     
+    <em class="blue">I have an account</em>
+    <form>
+        <div class="row-fluid">                                                 
+        <div class="control-group span12 email">
+          <label class="control-label" for="email">Email Address</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-envelope"></i></span>
+              <input id="email" class="span11" name="email" type="text" placeholder="myaccount@example.com" />
+            </div>
+          </div>
+        </div><!-- /cntrl-group -->       
+      </div> <!-- /row --> 
+      <div class="row-fluid">                                                 
+        <div class="control-group span12 password">
+          <label class="control-label " for="password">Password</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-key"></i></span>
+              <input id="password" class="span11" name="password" type="password" placeholder="Minimum 6 Characters" />
+            </div>
+          </div>
+        </div><!-- /cntrl-group -->  
+      </div><!-- /row -->
+       <div class="row-fluid space-top-20"> 
+        <input id="" class="btn btn-large btn-block btn-success" type="submit" value="Continue to Next Step"> 
+      </div><!-- /row -->   
+    </form>     
    </div> <!-- /log in form -->	
+   
+   <div class="span1" style="height:700px; border-right:1px solid #efefef;">
+   
+   </div>
   
-   <div class="span8">
+   <div class="span7">
     <h3>Create an Account</h3>
     <em class="blue">I have an account</em>
+    
+    <button id="toggleButton" class="btn btn-large span6 btn-primary" type="button">Block level button</button>
+    
+    
     <form id="signup"style="background:#fefcf7;padding:10px;">
       <div class="row-fluid">                                                 
         <div class="control-group span6 firstName">
