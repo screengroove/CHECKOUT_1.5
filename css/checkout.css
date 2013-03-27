@@ -66,7 +66,9 @@ font-weight: 600;
   background: #efefef;
   min-height: 300px;
 }
-
+,bg-form{
+  background: #fefcf7;
+}
 
 .round{
 -webkit-border-radius: 5px;

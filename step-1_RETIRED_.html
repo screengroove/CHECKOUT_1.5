@@ -90,6 +90,12 @@ $(document).ready(function(){
     }
   });
   
+  $('#signup').hide();
+  
+  $('#toggleButton').click(function() {
+    $('#signup').slideToggle('slow');
+    $('#toggleButton').hide();
+    });
     
   $('#coupon-row').hide();
   
@@ -224,211 +230,177 @@ $(document).ready(function(){
   
   <div class="row-fluid bdr-btm" id="coupon-row">
     <div class="span3">
-      <h5>Enter Your Coupon Code Here <i class="icon-arrow-right"></i></h5>
+      <h5>Do you have a coupon code?</h5>
     </div>
     <div class="span5">
      <div class="input-append">
-        <input class="span5" id="appendedInputButton" type="text" placeholder="Enter Coupon Code">
-        <button class="btn" type="button">Submit</button>
+        <input class="span4" id="appendedInputButton" type="text" placeholder="Enter Your Coupon Code">
+        <button class="btn" type="button">Validate</button>
       </div><!-- /input-append --> 
     </div> <!-- / span5--> 
   </div><!-- /row -->
 
   <div class="row-fluid">
-   <div class="span12">
-       <div class="accordion" id="accordion2">
-      <div class="accordion-group">
-        <div class="accordion-heading">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-            <h3>Sign In</h3></a>
-        </div><!-- /accordian-heading -->
-        <div id="collapseOne" class="accordion-body collapse in">
-          <div class="accordion-inner bg-form">
-                    <form>
-                      <div class="row-fluid">                                                 
-                      <div class="control-group email span6">
-                        <label class="control-label" for="email">Email Address</label>
-                        <div class="controls valid-icon">
-                          <div class="input-prepend">
-                            <span class="add-on"><i class="icon-envelope"></i></span>
-                            <input id="email" class="span10" name="email" type="email" placeholder="myaccount@example.com" />
-                          </div>
-                        </div>
-                      </div><!-- /cntrl-group -->       
-                    </div> <!-- /row --> 
-                    <div class="row-fluid">                                                 
-                      <div class="control-group password span6">
-                        <label class="control-label " for="password">Password</label>
-                        <div class="controls valid-icon">
-                          <div class="input-prepend">
-                            <span class="add-on"><i class="icon-key"></i></span>
-                            <input id="password" class="span10" name="password" type="password" placeholder="Minimum 6 Characters" />
-                            
-                          </div>
-                          <a href="#forgot-password" data-toggle="modal"><em style="margin-left: 37px;font-weight:400;">Forgot Password?</em>
-                        </div>
-                      </div><!-- /cntrl-group -->
-                    </div><!-- /span6 -->  
-                    <input id="" class="btn btn-large btn-success span4 space-top-20" type="submit" value="Sign In"> 
-                    </div><!-- /row -->
-                  </form>     
-        
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-group">
-                <div class="accordion-heading">
-                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                    <h3>Create an Account</h3>
-                  </a>
-                </div>
-                <div id="collapseTwo" class="accordion-body collapse">
-                  <div class="accordion-inner">
-                    <form id="signup"style="background:#fefcf7;padding:10px;">
-              <div class="row-fluid">                                                 
-                <div class="control-group span6 firstName">
-                  <label class="control-label " for="firstName">First Name</label>
-                  <div class="controls valid-icon">
-                    <div class="input-prepend">
-                      <span class="add-on"><i class="icon-user"></i></span>
-                      <input id="firstName" class="span11" name="firstName" type="text" placeholder="First Name" />
-                    </div>
-                  </div>
-                </div><!-- /cntrl-group -->       
-                <div class="control-group span6 lastName">
-                  <label class="control-label " for="lastName">Last Name</label>
-                  <div class="controls valid-icon">
-                    <div class="input-prepend">
-                      <span class="add-on"><i class="icon-user"></i></span>
-                      <input id="lastName" name="lastName" type="text" class="span11" placeholder="Last Name" />
-                    </div>
-                  </div>
-                </div> <!-- /cntrl-group -->      
-              </div> <!-- /row -->
-              <div class="row-fluid">                                                 
-                <div class="control-group span6 phoneNumber">
-                  <label class="control-label " for="phoneNumber">Phone Number</label>
-                  <div class="controls valid-icon">
-                    <div class="input-prepend">
-                      <span class="add-on"><i class="icon-phone"></i></span>
-                      <input id="phoneNumber" class="span11" name="phoneNumber" type="text" />
-                    </div>
-                  </div>
-                </div><!-- /cntrl-group -->            
-                <div class=" span6">
-                  <a href="#" id="phone-tip" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top"><em style="line-height:76px;margin-right:5px;">Why do you need this?</em></a><i class="icon-question-sign"></i>
-                </div> <!-- /cntrl-group -->      
-              </div> <!-- /row -->
-              <div class="row-fluid">                                                 
-                <div class="control-group span6 email">
-                  <label class="control-label" for="email">Email Address</label>
-                  <div class="controls valid-icon">
-                    <div class="input-prepend">
-                      <span class="add-on"><i class="icon-envelope"></i></span>
-                      <input id="email" class="span11" name="email" type="text" placeholder="myaccount@example.com" />
-                    </div>
-                  </div>
-                </div><!-- /cntrl-group -->       
-              </div> <!-- /row -->
-              <div class="row-fluid">                                                 
-                <div class="control-group span6 password">
-                  <label class="control-label " for="password">Password</label>
-                  <div class="controls valid-icon">
-                    <div class="input-prepend">
-                      <span class="add-on"><i class="icon-key"></i></span>
-                      <input id="password" class="span11" name="password" type="password" placeholder="Minimum 6 Characters" />
-                    </div>
-                  </div>
-                </div><!-- /cntrl-group -->       
-                <div class="control-group span6 confirmation">
-                  <label class="control-label " for="confirmation">Confirm Password</label>
-                  <div class="controls valid-icon">
-                    <div class="input-prepend">
-                      <span class="add-on"><i class="icon-key"></i></span>
-                      <input type="password" id="confirmation" name="confirmation" type="text" class="span11" placeholder="Re-type Password"  />
-                    </div>
-                  </div>
-                </div> <!-- /cntrl-group -->      
-              </div> <!-- /row -->
-              <hr>
-            
-              <div class="row-fluid">      
-                <div class="span6">
-                  <label class="control-label" for="streetOne">How did you hear about us?</label>        
-                  <select id="company" class="span12" name="streetOne" type="select"  />
-                    <option value="0">Please Select:</option>
-                    <option value="1">Google, Bing, Other (Search Engine)</option>
-                    <option value="2">Guide to Investing in Gold & Silver (Book)</option>
-                    <option value="88">Hidden Secrets Of Money</option>
-                    <option value="85">WealthCycles.com</option>
-                    <option value="12">YouTube</option>
-                    <option value="15">Facebook, Twitter, other social media</option>
-                    <option value="5">Friend or family (Word of Mouth)</option>
-                    <option value="86">Another Website</option>                                       
-                  </select>
-                </div><!-- /cntrl-group --> 
-              </div> <!-- /row -->
-              <div class="row-fluid space-top-20"> 
-                <div class="span12 form-horizontal">          
-                  <label class="inline">Would you like to receive our free weekly newsletter?</label>        
-                  <label class="radio inline"> 
-                    <input type="radio" class="pull-right" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                      Yes
-                  </label>
-                  <label class="radio inline">
-                    <input type="radio" class="pull-right" name="optionsRadios" id="optionsRadios1" value="option1" >
-                      No
-                  </label>
-                </div><!-- /end4 -->
-              </div><!-- /row --> 
-              <div class="row-fluid space-top-20">
-                <div class="control-group">
-                  <label class="control-label checkbox" for="confirmation">
-                  <input id="policy" type="checkbox" class="niceCheck clearfix" value="yes" id="answer" name="policy" data-color="green" />
-                    <a href="#toc" data-toggle="modal" >I have read and fully understand the Terms, Conditions, Policies & Procedures</a></label>
-                  
-                    <div class="controls">
-                     
-                  </div><!-- /controls -->
-                </div> <!-- /cntrl-group -->  
-                 
-              </div><!-- /row -->
-            
-              <div class="row-fluid space-top-20"> 
-                <input id="signupSubmit" class="btn btn-large span5 btn-success" type="submit" value="Create My Account"> 
-              </div><!-- /row -->                 
-            </form>
-            
-          </div><!-- /accordian-inner -->
-        </div>
-      </div>
-    </div>      
-   </div><!-- /span12 -->     
+   <div class="span5">
+    <strong class="bold text-info"> Returning Customers</strong>
+    <h3 class="bdr-btm">SIGN IN</h3>
+    
+    <form>
+        <div class="row-fluid">                                                 
+        <div class="control-group email">
+          <label class="control-label" for="email">Email Address</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-envelope"></i></span>
+              <input id="email" class="span10" name="email" type="email" placeholder="myaccount@example.com" />
+            </div>
+          </div>
+        </div><!-- /cntrl-group -->       
+      </div> <!-- /row --> 
+      <div class="row-fluid">                                                 
+        <div class="control-group password">
+          <label class="control-label " for="password">Password</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-key"></i></span>
+              <input id="password" class="span10" name="password" type="password" placeholder="Minimum 6 Characters" />
+            </div>
+          </div>
+        </div><!-- /cntrl-group -->  
+      </div><!-- /row -->
+       <div class="row-fluid space-top-20"> 
+        <input id="" class="btn btn-large btn-block btn-success" type="submit" value="Sign In"> 
+      </div><!-- /row -->   
+    </form>     
+   </div> <!-- /log in form -->	   
+  
+   <div class="span7">
+    <strong class="bold text-info"> New Customers</strong>
+    <h3 class="bdr-btm">CREATE AN ACCOUNT</h3>
+    
+    <button id="toggleButton" class="btn btn-large span6 btn-warning" type="button">Create an Account</button>
+    
+    
+    <form id="signup"style="background:#fefcf7;padding:10px;">
+      <div class="row-fluid">                                                 
+        <div class="control-group span6 firstName">
+          <label class="control-label " for="firstName">First Name</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-user"></i></span>
+              <input id="firstName" class="span11" name="firstName" type="text" placeholder="First Name" />
+            </div>
+          </div>
+        </div><!-- /cntrl-group -->       
+        <div class="control-group span6 lastName">
+          <label class="control-label " for="lastName">Last Name</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-user"></i></span>
+              <input id="lastName" name="lastName" type="text" class="span11" placeholder="Last Name" />
+            </div>
+          </div>
+        </div> <!-- /cntrl-group -->      
+      </div> <!-- /row -->
+      <div class="row-fluid">                                                 
+        <div class="control-group span6 phoneNumber">
+          <label class="control-label " for="phoneNumber">Phone Number</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-phone"></i></span>
+              <input id="phoneNumber" class="span11" name="phoneNumber" type="text" />
+            </div>
+          </div>
+        </div><!-- /cntrl-group -->            
+        <div class=" span6">
+          <a href="#" id="phone-tip" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top"><em style="line-height:76px;margin-right:5px;">Why do you need this?</em></a><i class="icon-question-sign"></i>
+        </div> <!-- /cntrl-group -->      
+      </div> <!-- /row -->
+      <div class="row-fluid">                                                 
+        <div class="control-group span6 email">
+          <label class="control-label" for="email">Email Address</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-envelope"></i></span>
+              <input id="email" class="span11" name="email" type="text" placeholder="myaccount@example.com" />
+            </div>
+          </div>
+        </div><!-- /cntrl-group -->       
+      </div> <!-- /row -->
+      <div class="row-fluid">                                                 
+        <div class="control-group span6 password">
+          <label class="control-label " for="password">Password</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-key"></i></span>
+              <input id="password" class="span11" name="password" type="password" placeholder="Minimum 6 Characters" />
+            </div>
+          </div>
+        </div><!-- /cntrl-group -->       
+        <div class="control-group span6 confirmation">
+          <label class="control-label " for="confirmation">Confirm Password</label>
+          <div class="controls valid-icon">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-key"></i></span>
+              <input type="password" id="confirmation" name="confirmation" type="text" class="span11" placeholder="Re-type Password"  />
+            </div>
+          </div>
+        </div> <!-- /cntrl-group -->      
+      </div> <!-- /row -->
+      <hr>
+    
+      <div class="row-fluid">      
+        <div class="span6">
+          <label class="control-label" for="streetOne">How did you hear about us?</label>        
+          <select id="company" class="span12" name="streetOne" type="select"  />
+            <option value="0">Please Select:</option>
+            <option value="1">Google, Bing, Other (Search Engine)</option>
+            <option value="2">Guide to Investing in Gold & Silver (Book)</option>
+            <option value="88">Hidden Secrets Of Money</option>
+            <option value="85">WealthCycles.com</option>
+            <option value="12">YouTube</option>
+            <option value="15">Facebook, Twitter, other social media</option>
+            <option value="5">Friend or family (Word of Mouth)</option>
+            <option value="86">Another Website</option>                                       
+          </select>
+        </div><!-- /cntrl-group --> 
+      </div> <!-- /row -->
+      <div class="row-fluid space-top-20"> 
+        <div class="span12 form-horizontal">          
+          <label class="inline">Would you like to receive our free weekly newsletter?</label>        
+          <label class="radio inline"> 
+            <input type="radio" class="pull-right" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              Yes
+          </label>
+          <label class="radio inline">
+            <input type="radio" class="pull-right" name="optionsRadios" id="optionsRadios1" value="option1" >
+              No
+          </label>
+        </div><!-- /end4 -->
+      </div><!-- /row --> 
+      <div class="row-fluid space-top-20">
+        <div class="control-group">
+          <label class="control-label checkbox" for="confirmation">
+          <input id="policy" type="checkbox" class="niceCheck clearfix" value="yes" id="answer" name="policy" data-color="green" />
+            <a href="#toc" data-toggle="modal" >I have read and fully understand the Terms, Conditions, Policies & Procedures</a></label>
+          
+            <div class="controls">
+             
+          </div><!-- /controls -->
+        </div> <!-- /cntrl-group -->  
+         
+      </div><!-- /row -->
+    
+      <div class="row-fluid space-top-20"> 
+        <input id="signupSubmit" class="btn btn-large btn-block btn-success" type="submit" value="Create My Account"> 
+      </div><!-- /row -->                 
+    </form>
+    </div> 
+     
   </div><!-- /row -->
   
-<!-- Modal Password -->
-<div id="forgot-password" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">FORGOT PASSWORD?</h3>
-  </div>
-  <div class="modal-body">
-  <form>
-    <div class="row-fluid">                                                 
-    <div class="control-group email span6">
-      <label class="control-label" for="email">Please enter your email address below</label>
-      <div class="controls valid-icon">
-        <div class="input-prepend">
-          <span class="add-on"><i class="icon-envelope"></i></span>
-          <input id="email" class="span10" name="email" type="email" placeholder="myaccount@example.com" />
-        </div>
-      </div>
-    </div><!-- /cntrl-group --> 
-  </form>
-  </div><!-- /end modal-body -->  
   
-  
-<!-- Modal TOC -->
+<!-- Modal -->
 <div id="toc" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>

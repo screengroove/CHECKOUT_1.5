@@ -29,6 +29,7 @@
 	<link href="css/table.css" rel="stylesheet">
 	<link href="js/checkable/prettyCheckable.css" rel="stylesheet">
 	<link href="css/steps.css" rel="stylesheet">
+	<link href="css/Font-Awesome/css/font-awesome.min.css" rel="stylesheet">
 	
 	
 
@@ -93,6 +94,12 @@ $(document).ready(function(){
 		  $("#optionA").hide();
 		  $("#optionB").slideDown('fast');				
 		});
+		
+		 $('#coupon-row').hide();
+  
+  $('#coupon-link').click(function() {
+    $('#coupon-row').show();
+    });
     
 });
   </script>
@@ -160,79 +167,89 @@ $(document).ready(function(){
 <div class="container">		<!--start: Container -->		
   <div class="row-fluid">				
       <div class="span12">	  				
-          <table class="table table-striped table-condensed" id="table-review">
+                 <table class="table table-striped table-condensed">
             <thead>
               <tr>
-                <td>Product Description</td>
                 <td></td>
-                <td>Item Price</td>
-                <td>Quantity</td>
-                <td></td>
-                <td>Total</td>
+                <td>PRODUCT DESCRIPTION</td>
+                <td>ITEM PRICE</td>
+                <td colspan="2">QUANTITY</td>
+                <td>TOTAL</td>
               </tr>  
             </thead>
             <tfoot>
+              
               <tr>
-                <td colspan="5">SUB-TOTAL</td>
-                <td>2342</td>
-              </tr>
-              <tr>
-                <td colspan="5">SHIPPING AND INSURANCE</td>
+                <td class="text-right"colspan="5">SHIPPING AND INSURANCE</td>
                 <td>2342</td>					
               </tr>
               
               <tr class="warning">
-                <td colspan="5">CALIFORNIA TAX 9.25%</td>
+                <td class="text-right" colspan="5">CALIFORNIA TAX 9.25%</td>
                 <td>2342</td>					
               </tr>
               <tr>
-                <td colspan="5">TOTAL</td>
+                <td colspan="1">
+                  <button class="btn btn-mini" id="coupon-link" href="">Redeem Coupon Code</button>
+                </td>
+                <td colspan="4" class="text-right">SUB-TOTAL</td>
                 <td>$12,405.23</td>					
               </tr>								
             </tfoot>
             <tbody> 
               <tr>
-                 <td class="hidden-phone"><img src="img/products/gold_eagle.png" class="hidden-phone" alt="gold_eagle" width="75" height="75" /></td>
-                <td><a href"#">American Gold Eagle 1/2 Oz</a></td>
-                <td class="qprice">$899.11</td>
-                <td class="qedit">
+                <td class="hidden-phone"><img src="img/products/gold_eagle.png" class="hidden-phone" alt="gold_eagle" width="75" height="75" /></td>
+                <td>American Gold Eagle 1/2 Oz</td>
+                <td>$899.11</td>
+                <td>
                   <input value="2" style="width:30px">
-                  <button>Update</button>
-                  <a href="#" class="link-remove remove"><i class="icon-minus-sign blue>"></i>Remove Item</a>
+                  <button>Update</button>                  
+                </td>
+                <td><a href="#" class="link-remove remove"><i class="icon-minus-sign blue>"></i>Remove Item</a>
                   <span class="hide remove-confirm">
                       <p>Are you sure?</p>
                       <a href="#" class="remove-yes"><i class="icon-ok text-success"></i>Yes</a>                   
                       <a href="#" class="remove-no"><i class="icon-remove text-error"></i>Cancel</a>
-                  </span>
-                </td>
-                <td></td>
-                <td class="qtotal">$1,798.22</td>
+                  </span></td>
+                <td>$1,798.22</td>
               </tr>
               <tr>
                 <td class="hidden-phone"><img src="img/products/gold_eagle.png"  alt="gold_eagle" width="75" height="75" /></td>
-                <td><a href"#">American Gold Eagle 1/2 Oz</a></td>
-                <td class="qprice">$899.11</td>
-                <td class="qedit">
+                <td>American Gold Eagle 1/2 Oz</td>
+                <td >$899.11</td>
+                <td>                 
                   <input value="2" style="width:30px">
-                  <button>Update</button>
+                  <button>Update</button>   
+                </div>                  
+                </td>
+                <td>
                   <a href="#" class="link-remove remove"><i class="icon-minus-sign blue>"></i>Remove Item</a>
                   <span class="hide remove-confirm">
-                     <p>Are you sure?</p>
-                      <a href="#" class="remove-yes"><i class="icon-ok text-success"></i>Yes</a>                   
-                      <a href="#" class="remove-no"><i class="icon-remove text-error"></i>Cancel</a>
+                    <p>Are you sure?</p>
+                    <a href="#" class="remove-yes"><i class="icon-ok text-success"></i>Yes</a>                   
+                    <a href="#" class="remove-no"><i class="icon-remove text-error"></i>Cancel</a>
                   </span>
                 </td>
-                <td></td>
                 <td class="qtotal">$1,798.22</td>
               </tr>
             </tbody>
-          </table> 				
-    </div> <!-- END span12 -->					
+          </table> 	    </div> <!-- END span12 -->					
   </div> <!--end: Row-->
+   <div class="row-fluid bdr-btm" id="coupon-row">
+    <div class="span3">
+      <h5>Enter Your Coupon Code Here <i class="icon-arrow-right"></i></h5>
+    </div>
+    <div class="span5">
+     <div class="input-append">
+        <input class="span5" id="appendedInputButton" type="text" placeholder="Enter Coupon Code">
+        <button class="btn" type="button">Submit</button>
+      </div><!-- /input-append --> 
+    </div> <!-- / span5--> 
+  </div><!-- /row -->
   
   <h3>Please select a payment method below:</h3> 
   <div class="row-fluid">       
-    <div class="span8 space-bttm">
+    <div class="span4 space-bttm">
        <div class="section-title"> 
         <strong>OPTION A</strong><span class="label label-info pull-right">Most Popular</span>
       </div> <!-- END SECTION TITLE --> 
@@ -253,12 +270,12 @@ $(document).ready(function(){
       </div><!-- /pymt-total --> 
     </div> <!-- /end span4 -->
     
-    <div class="span4 space-bttm hide">
+    <div class="span4 space-bttm disabled">
        <div class="section-title"> 
         <strong>OPTION B</strong>
       </div> <!-- END SECTION TITLE --> 
       <label class="radio label-blue">
-        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" >
         100% Credit Card Payment
       </label>
       <div class="pymt-desc">
@@ -273,7 +290,7 @@ $(document).ready(function(){
       </div><!-- /pymt-total --> 
     </div> <!-- /end span4 -->
     
-    <div class="span4 space-bttm hide">
+    <div class="span4 space-bttm ">
        <div class="section-title"> 
         <strong>OPTION C</strong>
       </div> <!-- END SECTION TITLE --> 
@@ -299,12 +316,6 @@ $(document).ready(function(){
  
  </div><!-- /ROW -->
  
- <div class="row-fluid" id="optionA">
-  <div class="span10 test">
-  
-  </div>
- </div> <!-- /end row -->
- 
  <div class="row-fluid" id="optionB">
     <div class="span4 bg-blue">
       <h4 class="white"> 100% Credit Card </h4>
@@ -317,6 +328,10 @@ $(document).ready(function(){
     </div> <!-- END span -->
   
  </div><!-- /end row -->
+ <div class="row-fluid">
+    <button class="btn pull-left" type="submit"><i class="icon-chevron-left white"></i>Go Back to Previous Step</button>
+    <button class="btn btn-large btn-success pull-right" id="formSubmit"  type="submit" value="Continue to Next Step">Continue to Next Step <i class="icon-chevron-right white"></i></button>
+  </div><!-- /row -->
 
 
 		
