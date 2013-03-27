@@ -20,10 +20,10 @@
 		vertical-align: middle;	
 }
 
-.table tbody td{
-	font-size: 1.1em;
+.table tbody tr td{
+	font-size: 1.3em;
 	padding: 10px;
-	vertical-align: middle;
+	vertical-align: middle !important;
 }
 .table tbody tr:last-child{
 	border-bottom: 2px solid #eee;
