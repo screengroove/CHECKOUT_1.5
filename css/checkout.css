@@ -409,7 +409,8 @@ a.link-remove:hover {
 }
 
 .remove-confirm{
-  font-size: 11px;
+  font-size: 12px;
+  padding: 0px 4px;
 }
 
 /*

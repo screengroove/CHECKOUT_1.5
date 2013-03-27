@@ -78,6 +78,7 @@ $(document).ready(function(){
   $('#phone-tip').mouseover(function(){
     $('#phone-tip').popover('show')
   })
+  
   $('input').focusout(function() {
     $('#signup').validate().element(this)
     if($(this).hasClass('error')){
@@ -87,14 +88,20 @@ $(document).ready(function(){
       $('.'+this.id).removeClass('error')
       $('.'+this.id).addClass('success')
     }
-  })
+  });
+  
   $('#signup').hide();
   
   $('#toggleButton').click(function() {
     $('#signup').slideToggle('slow');
     $('#toggleButton').hide();
     });
-   
+    
+  $('#coupon-row').hide();
+  
+  $('#coupon-link').click(function() {
+    $('#coupon-row').show();
+    });
 
 });
 </script>
@@ -154,30 +161,29 @@ $(document).ready(function(){
           <table class="table table-striped table-condensed">
             <thead>
               <tr>
-                <td>Product Description</td>
                 <td></td>
-                <td>Item Price</td>
-                <td>Quantity</td>
-                <td></td>
-                <td>Total</td>
+                <td>PRODUCT DESCRIPTION</td>
+                <td>ITEM PRICE</td>
+                <td colspan="2">QUANTITY</td>
+                <td>TOTAL</td>
               </tr>  
             </thead>
             <tfoot>
+              
               <tr>
-                <td colspan="5">SUB-TOTAL</td>
-                <td>2342</td>
-              </tr>
-              <tr>
-                <td colspan="5">SHIPPING AND INSURANCE</td>
+                <td class="text-right"colspan="5">SHIPPING AND INSURANCE</td>
                 <td>2342</td>					
               </tr>
               
               <tr class="warning">
-                <td colspan="5">CALIFORNIA TAX 9.25%</td>
+                <td class="text-right" colspan="5">CALIFORNIA TAX 9.25%</td>
                 <td>2342</td>					
               </tr>
               <tr>
-                <td colspan="5">TOTAL</td>
+                <td colspan="1">
+                  <button class="btn btn-mini" id="coupon-link" href="">Redeem Coupon Code</button>
+                </td>
+                <td colspan="4" class="text-right">SUB-TOTAL</td>
                 <td>$12,405.23</td>					
               </tr>								
             </tfoot>
@@ -186,7 +192,7 @@ $(document).ready(function(){
                 <td class="hidden-phone"><img src="img/products/gold_eagle.png" class="hidden-phone" alt="gold_eagle" width="75" height="75" /></td>
                 <td>American Gold Eagle 1/2 Oz</td>
                 <td>$899.11</td>
-                <td style="padding:15px;">
+                <td>
                   <input value="2" style="width:30px">
                   <button>Update</button>                  
                 </td>
@@ -203,8 +209,8 @@ $(document).ready(function(){
                 <td>American Gold Eagle 1/2 Oz</td>
                 <td >$899.11</td>
                 <td>                 
-                  <input class="span2" value="2" type="text">
-                  <button class="btn btn-mini " type="button">Update</button>
+                  <input value="2" style="width:30px">
+                  <button>Update</button>   
                 </div>                  
                 </td>
                 <td>
@@ -221,6 +227,18 @@ $(document).ready(function(){
           </table> 				
     </div> <!-- END span12 -->					
   </div> <!--end: Row-->
+  
+  <div class="row-fluid bdr-btm" id="coupon-row">
+    <div class="span3">
+      <h5>Do you have a coupon code?</h5>
+    </div>
+    <div class="span5">
+     <div class="input-append">
+        <input class="span4" id="appendedInputButton" type="text" placeholder="Enter Your Coupon Code">
+        <button class="btn" type="button">Validate</button>
+      </div><!-- /input-append --> 
+    </div> <!-- / span5--> 
+  </div><!-- /row -->
 
   <div class="row-fluid">
    <div class="span5">
@@ -233,7 +251,7 @@ $(document).ready(function(){
           <div class="controls valid-icon">
             <div class="input-prepend">
               <span class="add-on"><i class="icon-envelope"></i></span>
-              <input id="email" class="span12" name="email" type="text" placeholder="myaccount@example.com" />
+              <input id="email" class="span10" name="email" type="email" placeholder="myaccount@example.com" />
             </div>
           </div>
         </div><!-- /cntrl-group -->       
@@ -244,7 +262,7 @@ $(document).ready(function(){
           <div class="controls valid-icon">
             <div class="input-prepend">
               <span class="add-on"><i class="icon-key"></i></span>
-              <input id="password" class="span12" name="password" type="password" placeholder="Minimum 6 Characters" />
+              <input id="password" class="span10" name="password" type="password" placeholder="Minimum 6 Characters" />
             </div>
           </div>
         </div><!-- /cntrl-group -->  
@@ -255,11 +273,11 @@ $(document).ready(function(){
     </form>     
    </div> <!-- /log in form -->	   
   
-   <div class="span6 offset1">
+   <div class="span7">
     <h3 class="bdr-btm">Create an Account</h3>
     <em class="blue">I have an account</em>
     
-    <button id="toggleButton" class="btn btn-large span6 btn-primary" type="button">Block level button</button>
+    <button id="toggleButton" class="btn btn-large span6 btn-warning" type="button">Create an Account</button>
     
     
     <form id="signup"style="background:#fefcf7;padding:10px;">
