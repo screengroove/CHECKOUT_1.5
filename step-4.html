@@ -78,8 +78,14 @@
       },
     });
     
-    $('.exp-tip').tooltip('toggle');
-    $('.cvc-tip').popover('toggle');
+
+    $('.exp-tip').mouseover(function(){
+        $(this).tooltip('toggle')
+    })
+    $('.cvc-tip').mouseover(function(){
+        $(this).popover('toggle')
+    })
+
     
      $('#coupon-row').hide();
   
@@ -87,6 +93,7 @@
     $('#coupon-row').show();
     });
     
+
     
   });
 
@@ -193,7 +200,18 @@
                 <td>$899.11</td>
                 <td>
                   <input value="2" style="width:30px">
+
+                  <button>Update</button>
+                  <a href="#" class="link-remove remove"><i class="icon-minus-sign blue>"></i>Remove Item</a>
+                  <span class="hide remove-confirm">
+                    Are you sure? &nbsp
+                    <a href="#" class="remove-yes"><i class="icon-minus-sign blue>"></i>Yes</a>
+                    &nbsp
+                    <a href="#" class="remove-no"><i class="icon-minus-sign blue>"></i>No</a>
+                  </span>
+
                   <button>Update</button>                  
+
                 </td>
                 <td><a href="#" class="link-remove remove"><i class="icon-minus-sign blue>"></i>Remove Item</a>
                   <span class="hide remove-confirm">
@@ -375,8 +393,10 @@
     <input class='span12' id="number_cc" name="number_cc" placeholder='Card number' type='text' placeholder="Card number" >
   </div>
   <div class='span4'>
+
     <label class='control-label' for='card-security-code'>Security code</label>
     <input class='span10 cvc-tip' id="veri_code" name="veri_code" placeholder='CVC' type='text' maxlength="4" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">
+
   </div>
 </div><!-- /row -->
     </div>
