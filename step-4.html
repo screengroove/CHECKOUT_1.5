@@ -78,12 +78,22 @@
       },
     });
     
+
     $('.exp-tip').mouseover(function(){
         $(this).tooltip('toggle')
     })
     $('.cvc-tip').mouseover(function(){
         $(this).popover('toggle')
     })
+
+    
+     $('#coupon-row').hide();
+  
+  $('#coupon-link').click(function() {
+    $('#coupon-row').show();
+    });
+    
+
     
   });
 
@@ -111,25 +121,25 @@
   			   <div class="multi-step four-steps numbered color-2">
           	<ol>
           		<li>
-          			<div class="wrap">
+          			<a href="step-2.html"><div class="wrap">
           				<p class="title">Sign In</p>
           				<p class="subtitle">Enter your credentials</p>
-          			</div>
+          			</div></a>
           		</li>
           		<li>
-          			<a href="step-1.html"><div class="wrap">
+          			<a href="step-2.html"><div class="wrap">
           				<p class="title">Select Shipping</p>
           				<p class="subtitle">Select destination</p>
           			</div></a>
           		</li>
           		<li>
-          			<a href="step-2.html"><div class="wrap">
+          			<a href="step-3.html"><div class="wrap">
           				<p class="title">Select Payment</p>
           				<p class="subtitle">Choose the payment method</p>
           			</div></a>
           		</li>
           		<li class="current">
-          			<a href="step-3.html"><div class="wrap">
+          			<a href="step-4.html"><div class="wrap">
           				<p class="title">Submit</p>
           				<p class="subtitle">Review you order</p>
           			</div></a>
@@ -154,46 +164,43 @@
 <div class="container">				
   <div class="row-fluid">				
       <div class="span12">	  				
-          <table class="table table-striped table-condensed" id="table-review">
+                 <table class="table table-striped table-condensed">
             <thead>
               <tr>
-                <td>Product Description</td>
                 <td></td>
-                <td>Item Price</td>
-                <td>Quantity</td>
-                <td></td>
-                <td>Total</td>
+                <td>PRODUCT DESCRIPTION</td>
+                <td>ITEM PRICE</td>
+                <td colspan="2">QUANTITY</td>
+                <td>TOTAL</td>
               </tr>  
             </thead>
             <tfoot>
+              
               <tr>
-                <td colspan="5">SUB-TOTAL</td>
-                <td>2342</td>
-              </tr>
-              <tr>
-                <td colspan="5">SHIPPING AND INSURANCE</td>
+                <td class="text-right"colspan="5">SHIPPING AND INSURANCE</td>
                 <td>2342</td>					
               </tr>
-              <tr>
-                <td colspan="5">CREDIT CARD PROCESSING FEE</td>
-                <td>2342</td>					
-              </tr>
+              
               <tr class="warning">
-                <td colspan="5">CALIFORNIA TAX 9.25%</td>
+                <td class="text-right" colspan="5">CALIFORNIA TAX 9.25%</td>
                 <td>2342</td>					
               </tr>
               <tr>
-                <td colspan="5">TOTAL</td>
+                <td colspan="1">
+                  <button class="btn btn-mini" id="coupon-link" href="">Redeem Coupon Code</button>
+                </td>
+                <td colspan="4" class="text-right">SUB-TOTAL</td>
                 <td>$12,405.23</td>					
               </tr>								
             </tfoot>
             <tbody> 
               <tr>
-                 <td class="hidden-phone"><img src="img/products/gold_eagle.png" class="hidden-phone" alt="gold_eagle" width="75" height="75" /></td>
-                <td><a href"#">American Gold Eagle 1/2 Oz</a></td>
-                <td class="qprice">$899.11</td>
-                <td class="qedit">
+                <td class="hidden-phone"><img src="img/products/gold_eagle.png" class="hidden-phone" alt="gold_eagle" width="75" height="75" /></td>
+                <td>American Gold Eagle 1/2 Oz</td>
+                <td>$899.11</td>
+                <td>
                   <input value="2" style="width:30px">
+
                   <button>Update</button>
                   <a href="#" class="link-remove remove"><i class="icon-minus-sign blue>"></i>Remove Item</a>
                   <span class="hide remove-confirm">
@@ -202,32 +209,51 @@
                     &nbsp
                     <a href="#" class="remove-no"><i class="icon-minus-sign blue>"></i>No</a>
                   </span>
+
+                  <button>Update</button>                  
+
                 </td>
-                <td></td>
-                <td class="qtotal">$1,798.22</td>
+                <td><a href="#" class="link-remove remove"><i class="icon-minus-sign blue>"></i>Remove Item</a>
+                  <span class="hide remove-confirm">
+                      <p>Are you sure?</p>
+                      <a href="#" class="remove-yes"><i class="icon-ok text-success"></i>Yes</a>                   
+                      <a href="#" class="remove-no"><i class="icon-remove text-error"></i>Cancel</a>
+                  </span></td>
+                <td>$1,798.22</td>
               </tr>
               <tr>
                 <td class="hidden-phone"><img src="img/products/gold_eagle.png"  alt="gold_eagle" width="75" height="75" /></td>
-                <td><a href"#">American Gold Eagle 1/2 Oz</a></td>
-                <td class="qprice">$899.11</td>
-                <td class="qedit">
+                <td>American Gold Eagle 1/2 Oz</td>
+                <td >$899.11</td>
+                <td>                 
                   <input value="2" style="width:30px">
-                  <button>Update</button>
+                  <button>Update</button>   
+                </div>                  
+                </td>
+                <td>
                   <a href="#" class="link-remove remove"><i class="icon-minus-sign blue>"></i>Remove Item</a>
                   <span class="hide remove-confirm">
-                    Are you sure? &nbsp
-                    <a href="#" class="remove-yes"><i class="icon-minus-sign blue>"></i>Yes</a>
-                    &nbsp
-                    <a href="#" class="remove-no"><i class="icon-minus-sign blue>"></i>No</a>
+                    <p>Are you sure?</p>
+                    <a href="#" class="remove-yes"><i class="icon-ok text-success"></i>Yes</a>                   
+                    <a href="#" class="remove-no"><i class="icon-remove text-error"></i>Cancel</a>
                   </span>
                 </td>
-                <td></td>
                 <td class="qtotal">$1,798.22</td>
               </tr>
             </tbody>
-          </table> 				
-    </div> <!-- END span12 -->					
+          </table> 	    </div> <!-- END span12 -->					
   </div> <!--end: Row-->
+   <div class="row-fluid bdr-btm" id="coupon-row">
+    <div class="span3">
+      <h5>Enter Your Coupon Code Here <i class="icon-arrow-right"></i></h5>
+    </div>
+    <div class="span5">
+     <div class="input-append">
+        <input class="span5" id="appendedInputButton" type="text" placeholder="Enter Coupon Code">
+        <button class="btn" type="button">Submit</button>
+      </div><!-- /input-append --> 
+    </div> <!-- / span5--> 
+  </div><!-- /row -->
 
 
 
@@ -291,7 +317,7 @@
         
 <div class="row-fluid space-top-20 ">
   <div class="control-group span12">
-    <label class="control-label hide" for="streetOne">Street Address</label>
+    <label class="control-label " for="streetOne">Street Address</label>
     <div class="controls valid-icon">
       <input id="streetOne" class="span12" name="streetOne" type="text" placeholder="Street Address" required />
     </div>
@@ -300,13 +326,13 @@
   
   <div class="row-fluid">
     <div class="control-group span6">
-      <label class="control-label hide" for="city">City</label>
+      <label class="control-label" for="city">City</label>
       <div class="controls">
         <input id="city" class="span12" name="city" type="text" placeholder="City" />
       </div>
     </div>          
     <div class="control-group span6">
-      <label class="control-label hide" for="state">State / Province</label>
+      <label class="control-label " for="state">State / Province</label>
       <div class="controls">
         <input type="text" class="states span12" id="state" name="state" placeholder="State / Province" data-provide="typeahead" />
       </div>
@@ -315,13 +341,13 @@
   
   <div class="row-fluid">
     <div class="control-group span5">
-      <label class="control-label hide" for="postal">Postal Code </label>
+      <label class="control-label " for="postal">Postal Code </label>
       <div class="controls">
         <input id="postal" class="span12" name="postal" type="text" placeholder="Postal Code" />
       </div>
     </div>  
     <div class="control-group span7">
-      <label class="control-label hide" for="country">Country</label>
+      <label class="control-label " for="country">Country</label>
       <div class="controls">
         <input type="text" class="countries span12" id="country" name="country" data-provide="typeahead" placeholder="Country"/>
       </div>
@@ -343,32 +369,34 @@
   
   <div class="row-fluid">
   <div class="control-group span8">
-    <label class="control-label hide" for="name_cc">Name on Credit Card</label>
+    <label class="control-label" for="name_cc">Name on Credit Card</label>
     <div class="controls">    
       <input id="name_cc" class="span12" name="name_cc" type="text" placeholder="Name on Credit Card"/>
     </div>          
   </div><!-- /cntrl group -->  
   <div class='span4 hidden-phone'>
     <div class='controls controls-row card-expiration'>
-    <label class="control-label hide"  for='card-expiration-month'> month</label>
-    <input class='span4 exp-tip' id='card-expiration-month' name='card-expiration-month' placeholder='MM' type='text' maxlength="2" title="Expiration Month">
+    <label class="control-label"  for='card-expiration-month'> month</label>
+    <input class='span4' id='card-expiration-month' name='card-expiration-month' placeholder='MM' type='text' maxlength="2" >
     
     <div style="float:left;font-size:2em;margin:0px 4px;">/</div>
     
-    <label class="control-label hide" for='card-expiration-year'> year</label>
-    <input class='span4 exp-tip' id='card-expiration-year' name='card-expiration-year' placeholder='YY' type='text' maxlength="2" title="Expiration Year">
+    <label class="control-label" for='card-expiration-year'> year</label>
+    <input class='span4' id='card-expiration-year' name='card-expiration-year' placeholder='YY' type='text' maxlength="2" >
     </div>
     </div>
 </div><!-- /row -->
           
 <div class='row-fluid'>
   <div class='span8'>
-    <label class='control-label hide' for='card-number'>Card number</label>
+    <label class='control-label' for='card-number'>Card number</label>
     <input class='span12' id="number_cc" name="number_cc" placeholder='Card number' type='text' placeholder="Card number" >
   </div>
   <div class='span4'>
-    <label class='control-label hide' for='card-security-code'>Security code</label>
-    <input class='span10 cvc-tip' id="veri_code" name="veri_code" placeholder='CVC' type='text' maxlength="4" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">
+
+    <label class='control-label' for='card-security-code'>Security code</label>
+    <input class='span10 cvc-tip' id="veri_code" name="veri_code" placeholder='CVC' type='text' maxlength="4" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">
+
   </div>
 </div><!-- /row -->
     </div>

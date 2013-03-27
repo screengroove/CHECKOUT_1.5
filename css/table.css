@@ -4,26 +4,25 @@
 
 .table thead{
 	background: #444;
-
 }
-
 
 .table thead tr{
 	text-align: center;
 	color: #efefef;
 	text-shadow:  1px 1px 1px #222;
 	font-size: 1.1em;
-	padding:5px 0px;
+	padding:15px 0px;
 }
-.table thead tr td:last-child {
+.table thead tr td:last-child,
+.table thead tr td:first-child {
 		text-align: center;
 		vertical-align: middle;	
 }
 
-.table tbody td{
-	font-size: 1.1em;
+.table tbody tr td{
+	font-size: 1.3em;
 	padding: 10px;
-	vertical-align: middle;
+	vertical-align: middle !important;
 }
 .table tbody tr:last-child{
 	border-bottom: 2px solid #eee;
@@ -36,7 +35,16 @@
 .table tbody td:last-child{
 	text-align: center;
 }
-.table tfoot td:first-child{
+
+.table tfoot{
+  font-size: .9em;
+}
+.table tfoot tr{
+  padding: 5px 0px;
+}
+
+.table tfoot td:first-child,
+.table tfoot td:nth-child(2){
 	text-align: right;
 	font-style: inherit;
 }
@@ -45,16 +53,13 @@ text-align: center;
 	vertical-align: middle;	
 }
 
-.table tfoot{
-  font-size: .9em;
-}
-
 .table tfoot tr:last-child{
 	background: #444;
 	color: #efefef;
 	font-size: 1.3em;
 	font-weight: 600;	
 }
+
 .ship-info{
 	text-align: center;
 	color:#6d8ea0;
