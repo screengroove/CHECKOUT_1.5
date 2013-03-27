@@ -78,9 +78,12 @@
       },
     });
     
-    $('.exp-tip').tooltip('toggle');
-    $('.cvc-tip').popover('toggle')
-    
+    $('.exp-tip').mouseover(function(){
+        $(this).tooltip('toggle')
+    })
+    $('.cvc-tip').mouseover(function(){
+        $(this).popover('toggle')
+    })
     
   });
 
@@ -198,6 +201,7 @@
                     <a href="#" class="remove-yes"><i class="icon-minus-sign blue>"></i>Yes</a>
                     &nbsp
                     <a href="#" class="remove-no"><i class="icon-minus-sign blue>"></i>No</a>
+                  </span>
                 </td>
                 <td></td>
                 <td class="qtotal">$1,798.22</td>
@@ -364,7 +368,7 @@
   </div>
   <div class='span4'>
     <label class='control-label hide' for='card-security-code'>Security code</label>
-    <input class='span10 cvc-tip' id="veri_code" name="veri_code" placeholder='CVC' type='text' maxlength="4" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">
+    <input class='span10 cvc-tip' id="veri_code" name="veri_code" placeholder='CVC' type='text' maxlength="4" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="Popover on top">
   </div>
 </div><!-- /row -->
     </div>
