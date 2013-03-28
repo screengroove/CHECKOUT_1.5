@@ -43,11 +43,6 @@ margin-bottom: 10px;
 font-weight: 600;
 }
 
-
-.bg-form{
-  background: #fefcf7;
-}
-
 .bg-hlight{
   background: #f9f4a0 !important;
 }
@@ -66,8 +61,10 @@ font-weight: 600;
   background: #efefef;
   min-height: 300px;
 }
-,bg-form{
+.bg-form{
   background: #fefcf7;
+  border: 1px solid #faf1d9;
+  padding: 5px;
 }
 
 .round{
@@ -241,7 +238,7 @@ opacity: 1;
 transition: opacity 0.2s;
 }
 
-/*
+
 .cards li.visa{background: url('../img/ikons/CC/card-ikon-visa.png');}
 .cards li.mastercard{background: url('../img/ikons/CC/card-ikon-mastercard.png');}
 .cards li.amex{background: url('../img/ikons/CC/card-ikon-amex.png');}
@@ -251,7 +248,7 @@ transition: opacity 0.2s;
 .cc_jcb{background-position:-160px 0; width:32px; height:21px}
 .visa_back{background-position:0 -22px; width:75px; height:48px}
 .amex_front{background-position:-75px -22px; width:75px; height:48px}
-*/
+
 
 .visa_back {
 background-position: 0 -22px;
